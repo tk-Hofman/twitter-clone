@@ -1,0 +1,896 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: none;
+font-style: normal;
+text-align: left;
+zoom: 1;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+table {
+border-collapse: collapse;
+font-family: inherit;
+}
+h1,h2,h3,h4,h5 {
+font-size: 100%;
+font-weight: normal;
+line-height: 1;
+}
+input,textarea,select {
+font-family: inherit;
+font-size: 16px;
+}
+input[type="button"],input[type="text"],input[type="submit"] {
+ -webkit-appearance: none;
+ border-radius: 0;
+}
+textarea {
+resize: none;
+-webkit-appearance: none;
+border-radius: 0;
+}
+th,td {
+border-collapse: collapse;
+}
+table th,table td {
+white-space: nowrap;
+}
+ul,ol {
+list-style-type: none;
+}
+img {
+vertical-align: text-bottom;
+vertical-align: -webkit-baseline-middle;
+max-width: 100%;
+height: auto;
+width /***/:auto;
+}
+
+
+
+
+/* style.css */
+.content {
+  display: flex;
+  max-width: 1430px;
+}
+
+#content-left {
+  width: 387px;
+  height: 768px;
+  background-color: black;
+  border-right: solid 1px #2E3337;
+}
+#content-left ul li {
+  list-style: none;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.twitter {
+  margin-top: 18px;
+  margin-left: 148px;
+  height: 35px;
+  width: 45px;
+  margin-bottom: 32px;
+}
+
+.hashtag {
+  position: relative;
+}
+
+.hashtag-img {
+  width: 33px;
+  height: 35px;
+  margin-left: 152px;
+}
+
+.hashtag-text {
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 23px;
+  color: #FFFFFF;
+  display: inline;
+  margin-left: 14px;
+  position: relative;
+  top: 7px;
+}
+
+.configuration {
+  position: relative;
+}
+
+.configuration-img {
+  width: 36px;
+  height: 33px;
+  margin-left: 149px;
+  margin-top: 22px;
+}
+
+.configuration-text {
+  display: inline;
+  position: absolute;
+  width: 57px;
+  height: 23px;
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 23px;
+  color: #FFFFFF;
+  top: 28px;
+  margin-left: 15px;
+}
+
+#content-center {
+  width: 560px;
+  height: 768px;
+  background-color: black;
+  border-right: solid 1px #2E3337;
+}
+
+.center-header {
+  width: 560px;
+  height: 48px;
+  display: flex;
+}
+
+.center-header h1 {
+  font-family: Helvetica Neue;
+  color: #fff;
+  margin-left: 28px;
+  display: flex;
+}
+
+.header-twitter {
+  margin-top: 8px;
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: 0.04em;
+}
+
+.check {
+  width: 20px;
+  height: 19px;
+  margin-top: 12px;
+  margin-left: 1px;
+}
+
+.arrow {
+  width: 25px;
+  height: 22px;
+  margin-left: 14px;
+  margin-top: 12px;
+}
+
+.header-text {
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #6D767E;
+  margin-left: 29px;
+  margin-top: 5px;
+}
+
+.center-main{
+  width: 560px;
+  height: 520px;
+  border-bottom: solid 1px #2E3337;
+}
+
+.main-img {
+  max-width: 100%;
+  margin-top: 8px;
+}
+
+.main-top {
+  position: relative;
+}
+
+.main-profile {
+  margin-left: 11px;
+  width: 115px;
+  height: 115px;
+  position: absolute;
+  top: 150px;
+  left: 10px;
+  border: solid 3px black;
+  border-radius: 50%;
+}
+
+.main-twitter {
+  margin-top: 25px;
+  margin-left: 15px;
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 23px;
+  color: #fff;
+  display: inline-block;
+  letter-spacing: 0.04em;
+}
+
+.center-main .check {
+  margin-bottom: 23px;
+}
+
+.main-id {
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 23px;
+  color: #4F565C;
+  margin-left: 16px;
+  margin-top: -20px;
+  letter-spacing: 0.04em;
+}
+
+.follow-btn {
+  margin-left: 450px;
+  margin-top: 20px;
+}
+
+.center-text h2 {
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 23px;
+  letter-spacing: 0.04em;
+  color: white;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.center-text-top {
+  display: flex;
+}
+
+.center-map{
+  display: flex;
+  margin-top: 8px;
+  margin-left: 16px;
+}
+
+.map-img {
+  width: 20px;
+  height: 22.35px;
+}
+
+.map-text {
+  margin-top: 1px;
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+  color: #4F565C;
+}
+
+.center-link {
+  display: flex;
+  margin-left: 10px;
+  margin-top: 11px;
+}
+
+.link-img {
+  width: 18px;
+  height: 19px;
+}
+
+.link-text {
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #0096F8;
+  margin-top: -2px;
+  margin-left: 2px;
+}
+
+.center-birtnday {
+  display: flex;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.birtnday-img {
+  width: 21px;
+  height: 24px;
+}
+
+.birthday-text {
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #4F565C;
+  margin-top: 2px;
+  margin-left: 3px;
+}
+
+.center-date {
+  display: flex;
+  margin-left: 12px;
+  margin-top: 2px;
+}
+
+.date-img {
+  width: 25px;
+  height: 25px;
+}
+
+.date-text {
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #4F565C;
+  margin-left: 2px;
+  margin-top: 1px;
+}
+
+.follow {
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  margin-right: 446px;
+  margin-top: 10px;
+}
+
+.follow span {
+  color: #4F565C;
+  margin-left: 3px;
+}
+
+.follower {
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  margin-right: 187px;
+  margin-top: -24px;
+}
+
+.follower span {
+  line-height: 21px;
+  color: #4F565C;
+  margin-left: 4px;
+}
+
+.center-menu {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: #4F565C;
+  margin-left: 25px;
+  margin-top: 33px;
+  display: flex;
+}
+
+.tweet {
+  margin-top: 1px;
+  position: relative;
+  margin-left: 14px;
+  color: #fff;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  padding-bottom: 14px;
+}
+
+.tweet::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 58px;
+  background-color: #0096F8;
+  height: 3px;
+  left: 0%;
+  bottom: -3px;
+}
+
+.send {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: #4F565C;
+  margin-left: 74px;
+  margin-top: 1px;
+}
+
+.media {
+  margin-left: 77px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: #4F565C;
+  margin-top: 1px;
+}
+
+.center-like {
+  margin-left: 480px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: #4F565C;
+  margin-top: -31px;
+}
+
+.tweet-box1 {
+  width: 562px;
+  height: 100px;
+  border-top: solid 1px #2E3337;
+  border-bottom: solid 1px #2E3337;
+}
+
+.tweet-box2 {
+  width: 562px;
+  height: 100px;
+}
+
+.tweet-box2 .tweet-content {
+  margin-top: -28px;
+}
+
+.tweet-detail {
+  display: flex;
+}
+
+.tweet-profile {
+  width: 65px;
+  height: 55px;
+  margin-left: 2px;
+  margin-top: 11px;
+}
+
+.tweet-name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  margin-left: 73px;
+  margin-top: -50px;
+}
+
+.tweet-detail .check {
+  margin-top: -51px;
+  margin-left: 2px;
+}
+
+.tweet-account-date {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.05em;
+  color: #6D767E;
+  margin-top: -50px;
+  margin-left: 3px;
+}
+
+.tweet-menu {
+  margin-left: 221px;
+  margin-top: -50px;
+  width: 33px;
+  height: 15px
+}
+
+.tweet-content {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  margin-left: 74px;
+  margin-top: -25px;
+}
+
+.tweet-bottom {
+  display: flex;
+}
+
+.reply {
+  width: 26px;
+  height: 21px;
+  margin-left: 70px;
+  margin-top: 10px;
+}
+
+.reply-number {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  margin-top: 15px;
+  margin-left: 8px;
+}
+
+.rt {
+  width: 28px;
+  height: 15px;
+  margin-top: 16px;
+  margin-left: 73px;
+}
+
+.rt-number {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FFFFFF;
+  margin-top: 16px;
+  margin-left: 6px;
+}
+
+.like {
+  width: 16px;
+  height: 16px;
+  margin-left: 73px;
+  margin-top: 17px;
+}
+
+.like-number {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: #FFFFFF;
+  margin-top: 18px;
+  margin-left: 12px;
+}
+
+.share {
+  width: 22px;
+  height: 25px;
+  margin-left: 61px;
+  margin-top: 16px;
+}
+
+.bottom {
+  width: 1448px;
+  height: 67px;
+  background-color: #008FFF;
+}
+
+.bottom-text-top {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-left: 385px;
+  padding-top: 10px;
+}
+
+.bottom-text-sab {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  margin-left: 387px;
+  padding-top: 3px;
+}
+
+.login {
+  width: 100px;
+  height: 46px;
+  margin-left: 1060px;
+  margin-top: 9px;
+  margin-top: -85px;
+}
+
+.create {
+  width: 138px;
+  height: 56px;
+  margin-left: 6px;
+  margin-top: -85px;
+}
+
+#content-right {
+  width: 479px;
+  height: 768px;
+  background-color: black;
+  margin-left: 949px;
+  margin-top: -768px;
+}
+
+.search-box {
+  width: 348px;
+  height: 52px;
+  margin-left: 20px;
+}
+
+.login-box {
+  width: 328px;
+  height: 286px;
+  border-radius: 16px;
+  border: solid 1px #2E3337;
+  margin-left: 30px;
+  margin-top: 6px;
+}
+
+.right-main-text {
+  margin-left: 15px;
+  margin-top: 11px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+}
+
+.right-sab-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.07em;
+  color: #FFFFFF;
+  margin-left: 13px;
+  margin-top: 16px;
+}
+
+.login-bnts {
+  width: 291px;
+  height: 149px;
+  margin-top: 15px;
+  margin-left: 9px;
+}
+
+.goole-login-box{
+  margin-bottom: 5px;
+}
+
+.apple-login-box {
+  margin-bottom: 10px;
+  margin-left: 1px;
+}
+
+.number-or-address-box {
+  margin-left: 1px;
+}
+
+.right-text-bottom {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  margin: 4px 12px 17px 13px;
+}
+
+.right-text-bottom span {
+  color: #0094F4;
+}
+
+.left-top {
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-right: -5px;
+  width: 108px;
+  height: 91px;
+}
+
+.center-top {
+  margin-right: -5px;
+  margin-top: 18px;
+  width: 112px;
+  height: 93px;
+}
+
+.right-top {
+  margin-top: 18px;
+  margin-left: -2px;
+  width: 108px;
+  height: 93px;
+}
+
+.left-bottom {
+  margin-left: 31px;
+  margin-right: -5px;
+  width: 108px;
+  height: 93px;
+}
+
+.center-bottom {
+  margin-top: 1px;
+  width: 111px;
+  height: 92px;
+  margin-right: -6px;
+}
+
+.right-bottom {
+  width: 107px;
+  height: 91px;
+}
+
+.right-bottom-content  {
+  width: 328px;
+  height: 190px;
+  background-color: #14181C;
+  margin-top: 48px;
+  border-radius: 15px 15px 0 0;
+  margin-left: 32px;
+}
+
+.bottom-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.16em;
+  color: #FFFFFF;
+  margin-left: 15px;
+  padding-top: 11px;
+}
+
+.google-icon {
+  width: 44px;
+  height: 51px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.google-name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  margin-left: 71px;
+  margin-top: -43px;
+}
+
+.google-account .chack {
+  margin-left: 125px;
+  margin-top: -55px;
+  height: 25px;
+  width: 24px;
+}
+
+.google-account .account-id {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #6D767E;
+  margin-top: -22px;
+  margin-left: 70px;
+}
+
+.google-account .follow-btn {
+  width: 84px;
+  height: 39px;
+  margin-left: 80px;
+  margin-top: -40px;
+}
+
+.microsoft-icon {
+  width: 51px;
+  height: 51px;
+  margin-left: 12px;
+  margin-top: 18px;
+}
+
+.microsoft-name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  margin-left: 71px;
+  margin-top: -43px;
+}
+
+.microsoft-account .chack {
+  margin-left: 147px;
+  margin-top: -55px;
+  height: 25px;
+  width: 24px;
+}
+
+.microsoft-account .account-id {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #6D767E;
+  margin-top: -48px;
+  margin-left: 70px;
+}
+
+.microsoft-account .follow-btn {
+  width: 84px;
+  height: 39px;
+  margin-left: 229px;
+  margin-top: -90px;
+}
