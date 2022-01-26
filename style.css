@@ -70,6 +70,10 @@ width /***/:auto;
   display: flex;
   max-width: 1430px;
   background-color: black;
+  max-width: 100%;
+  max-height: 100%;
+  justify-content: center;
+  bottom: auto;
 }
 
 #content-left {
