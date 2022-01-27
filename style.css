@@ -225,6 +225,7 @@ html,body {
   width: 560px;
   height: 520px;
   border-bottom: solid 1px #2E3337;
+  position: relative;
 }
 
 .main-img {
@@ -248,7 +249,7 @@ html,body {
 }
 
 .main-twitter {
-  margin-top: 25px;
+  margin-top: 80px;
   margin-left: 15px;
   font-family: Helvetica Neue;
   font-style: normal;
@@ -276,10 +277,22 @@ html,body {
   letter-spacing: 0.04em;
 }
 
-.follow-btn {
-  margin-left: 450px;
-  margin-top: 20px;
+.profile-follow-block {
+  position: absolute;
+  margin-top: 15px;
+  right: 10px;
 }
+
+.round-button {
+  background-color: #EFF3F5;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 18px;
+  padding: 0 16px;
+  height: 30px;
+}
+
 
 .center-text h2 {
   font-family: Helvetica Neue;
@@ -843,11 +856,27 @@ html,body {
   padding-top: 11px;
 }
 
+.recommendation-tweet {
+  display: flex;
+}
+
+.account {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.goole-right {
+  margin-right: 90px;
+}
+
 .google-icon {
   width: 44px;
   height: 51px;
-  margin-left: 15px;
-  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.tweet-name-block {
+  display: flex;
 }
 
 .google-name {
@@ -858,18 +887,14 @@ html,body {
   line-height: 18px;
   letter-spacing: 0.02em;
   color: #FFFFFF;
-  margin-left: 71px;
-  margin-top: -43px;
 }
 
-.google-account .chack {
-  margin-left: 125px;
-  margin-top: -55px;
+.account .chack {
   height: 25px;
   width: 24px;
 }
 
-.google-account .account-id {
+.account-id {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -877,22 +902,20 @@ html,body {
   line-height: 14px;
   letter-spacing: 0.02em;
   color: #6D767E;
-  margin-top: -22px;
-  margin-left: 70px;
 }
 
-.google-account .follow-btn {
-  width: 84px;
-  height: 39px;
-  margin-left: 80px;
-  margin-top: -40px;
+.account {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.microsoft-right {
+  margin-right: 70px;
 }
 
 .microsoft-icon {
   width: 51px;
   height: 51px;
-  margin-left: 12px;
-  margin-top: 18px;
 }
 
 .microsoft-name {
@@ -903,32 +926,4 @@ html,body {
   line-height: 18px;
   letter-spacing: 0.02em;
   color: #FFFFFF;
-  margin-left: 71px;
-  margin-top: -43px;
-}
-
-.microsoft-account .chack {
-  margin-left: 147px;
-  margin-top: -55px;
-  height: 25px;
-  width: 24px;
-}
-
-.microsoft-account .account-id {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #6D767E;
-  margin-top: -48px;
-  margin-left: 70px;
-}
-
-.microsoft-account .follow-btn {
-  width: 84px;
-  height: 39px;
-  margin-left: 229px;
-  margin-top: -90px;
 }
