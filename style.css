@@ -103,6 +103,7 @@ html,body {
   margin-top: 530px;
   height: 50px;
   width: 150px;
+  border: none;
 }
 
 .tweet-up-btn:hover {
@@ -196,11 +197,14 @@ html,body {
   letter-spacing: 0.04em;
 }
 
-.check {
+.header-wrapper .official-mark {
+  margin-top: 11px;
+  margin-left: 3px;
+}
+
+.official-mark {
   width: 20px;
   height: 19px;
-  margin-top: 12px;
-  margin-left: 1px;
 }
 
 .arrow {
@@ -210,7 +214,7 @@ html,body {
   margin-top: 12px;
 }
 
-.header-text {
+.header-tweets-number {
   font-family: Helvetica Neue;
   font-style: normal;
   font-weight: normal;
@@ -221,23 +225,19 @@ html,body {
   margin-top: 5px;
 }
 
-.center-main{
+.center-profile {
   width: 560px;
   height: 520px;
   border-bottom: solid 1px #2E3337;
   position: relative;
 }
 
-.main-img {
+.header-img {
   max-width: 100%;
   margin-top: 8px;
 }
 
-.main-top {
-  position: relative;
-}
-
-.main-profile {
+.profile-icon {
   margin-left: 11px;
   width: 115px;
   height: 115px;
@@ -248,7 +248,7 @@ html,body {
   border-radius: 50%;
 }
 
-.main-twitter {
+.profile-name {
   margin-top: 80px;
   margin-left: 15px;
   font-family: Helvetica Neue;
@@ -261,11 +261,7 @@ html,body {
   letter-spacing: 0.04em;
 }
 
-.center-main .check {
-  margin-bottom: 23px;
-}
-
-.main-id {
+.profile-id {
   font-family: Helvetica Neue;
   font-style: normal;
   font-weight: bold;
@@ -273,7 +269,6 @@ html,body {
   line-height: 23px;
   color: #4F565C;
   margin-left: 16px;
-  margin-top: -20px;
   letter-spacing: 0.04em;
 }
 
@@ -294,7 +289,7 @@ html,body {
 }
 
 
-.center-text h2 {
+.profile-text h2 {
   font-family: Helvetica Neue;
   font-style: normal;
   font-weight: bold;
@@ -699,21 +694,6 @@ html,body {
   padding-top: 3px;
 }
 
-.login {
-  width: 100px;
-  height: 46px;
-  margin-left: 1060px;
-  margin-top: 9px;
-  margin-top: -85px;
-}
-
-.create {
-  width: 138px;
-  height: 56px;
-  margin-left: 6px;
-  margin-top: -85px;
-}
-
 #content-right {
   width: 479px;
   height: 100%;
@@ -721,21 +701,23 @@ html,body {
 }
 
 .search-box {
-  width: 348px;
-  height: 52px;
-  margin-left: 20px;
-}
-
-.login-box {
-  width: 328px;
-  height: 286px;
-  border-radius: 16px;
-  border: solid 1px #2E3337;
+  width: 330px;
+  height: 40px;
+  border-radius: 40px;
   margin-left: 30px;
-  margin-top: 6px;
+  padding-left: 50px;
+  background-color: #202329;
+  position: relative;
+  border: none;
 }
 
-.right-main-text {
+.search-img {
+  position: absolute;
+  margin-top: 8px;
+  left: 995px;
+}
+
+.login-box-top-main-text {
   margin-left: 15px;
   margin-top: 11px;
   font-family: Roboto;
@@ -747,7 +729,7 @@ html,body {
   color: #FFFFFF;
 }
 
-.right-sab-text {
+.login-box-top-text {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -757,29 +739,48 @@ html,body {
   color: #FFFFFF;
   margin-left: 13px;
   margin-top: 16px;
+  color: #6D767E;
+}
+
+.login-box {
+  width: 328px;
+  height: 286px;
+  border-radius: 16px;
+  border: solid 1px #2E3337;
+  margin-left: 30px;
+  margin-top: 6px;
 }
 
 .login-bnts {
-  width: 291px;
-  height: 149px;
+  display: block;
   margin-top: 15px;
-  margin-left: 9px;
 }
 
-.goole-login-box{
-  margin-bottom: 5px;
-}
-
-.apple-login-box {
+.login-btn {
+  width: 281px;
+  height: 37px;
+  border-radius: 70px;
+  margin-left: 20px;
   margin-bottom: 10px;
-  margin-left: 1px;
+  background-color: #ffff;
+  border: none;
 }
 
-.number-or-address-box {
-  margin-left: 1px;
+.login-btn:hover {
+  opacity: 0.9;
 }
 
-.right-text-bottom {
+.login-btn span {
+  color: #707376;
+}
+
+.login-box img {
+  height: 22px;
+  width: 22px;
+  margin-right: 8px;
+}
+
+.login-box-bottom-text {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -790,61 +791,52 @@ html,body {
   margin: 4px 12px 17px 13px;
 }
 
-.right-text-bottom span {
+.login-box-bottom-text span:hover {
+  border-bottom: solid 1px #0094F4;
+}
+
+.login-box-bottom-text span {
   color: #0094F4;
 }
 
-.left-top {
-  margin-top: 15px;
-  margin-left: 30px;
-  margin-right: -5px;
-  width: 108px;
-  height: 91px;
+.block-imgs {
+  margin-left: 25px;
+  margin-top: 20px;
+  width: 329px;
+  height: 185px;
 }
 
-.center-top {
-  margin-right: -5px;
-  margin-top: 18px;
-  width: 112px;
+.top-imgs {
+  display: flex;
+  width: 110px;
+  height: 93px;
+  border-bottom: solid 2px black;
+}
+
+.bottom-imgs {
+  display: flex;
+  width: 110px;
   height: 93px;
 }
 
-.right-top {
-  margin-top: 18px;
-  margin-left: -2px;
-  width: 108px;
-  height: 93px;
+.img-left {
+  border-right: solid 2px black;
 }
 
-.left-bottom {
-  margin-left: 31px;
-  margin-right: -5px;
-  width: 108px;
-  height: 93px;
+.img-right {
+  border-left: solid 2px black;
 }
 
-.center-bottom {
-  margin-top: 1px;
-  width: 111px;
-  height: 92px;
-  margin-right: -6px;
-}
-
-.right-bottom {
-  width: 107px;
-  height: 91px;
-}
-
-.right-bottom-content  {
+.recommended-blocks  {
   width: 328px;
   height: 190px;
   background-color: #14181C;
-  margin-top: 48px;
+  margin-top: 45px;
   border-radius: 15px 15px 0 0;
   margin-left: 32px;
 }
 
-.bottom-text {
+.recommended-tweet {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -856,30 +848,29 @@ html,body {
   padding-top: 11px;
 }
 
-.recommendation-tweet {
+.recommended-account {
+  margin-left: 20px;
+  margin-top: 20px;
   display: flex;
 }
 
-.account {
+.account-information {
+  margin-right: 60px;
+}
+
+.google-account-follow-btn {
   margin-left: 20px;
-  margin-top: 20px;
 }
 
-.goole-right {
-  margin-right: 90px;
-}
-
-.google-icon {
-  width: 44px;
-  height: 51px;
-  margin-right: 5px;
+.round-button:hover {
+  opacity: 0.9;
 }
 
 .tweet-name-block {
   display: flex;
 }
 
-.google-name {
+.account-name-label {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -887,11 +878,6 @@ html,body {
   line-height: 18px;
   letter-spacing: 0.02em;
   color: #FFFFFF;
-}
-
-.account .chack {
-  height: 25px;
-  width: 24px;
 }
 
 .account-id {
@@ -904,26 +890,10 @@ html,body {
   color: #6D767E;
 }
 
-.account {
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-.microsoft-right {
-  margin-right: 70px;
-}
-
-.microsoft-icon {
-  width: 51px;
-  height: 51px;
-}
-
-.microsoft-name {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
+.account-icon{
+  height: 44px;
+  width: 44px;
+  border-radius: 30px;
+  background-size: cover;
+  margin-right: 10px;
 }
