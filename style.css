@@ -103,6 +103,7 @@ html,body {
   margin-top: 530px;
   height: 50px;
   width: 150px;
+  border: none;
 }
 
 .tweet-up-btn:hover {
@@ -196,11 +197,14 @@ html,body {
   letter-spacing: 0.04em;
 }
 
-.check {
+.header-wrapper .official-mark {
+  margin-top: 11px;
+  margin-left: 3px;
+}
+
+.official-mark {
   width: 20px;
   height: 19px;
-  margin-top: 12px;
-  margin-left: 1px;
 }
 
 .arrow {
@@ -210,7 +214,7 @@ html,body {
   margin-top: 12px;
 }
 
-.header-text {
+.header-tweets-number {
   font-family: Helvetica Neue;
   font-style: normal;
   font-weight: normal;
@@ -221,22 +225,19 @@ html,body {
   margin-top: 5px;
 }
 
-.center-main{
+.center-profile {
   width: 560px;
   height: 520px;
   border-bottom: solid 1px #2E3337;
+  position: relative;
 }
 
-.main-img {
+.header-img {
   max-width: 100%;
   margin-top: 8px;
 }
 
-.main-top {
-  position: relative;
-}
-
-.main-profile {
+.profile-icon {
   margin-left: 11px;
   width: 115px;
   height: 115px;
@@ -247,8 +248,8 @@ html,body {
   border-radius: 50%;
 }
 
-.main-twitter {
-  margin-top: 25px;
+.profile-name {
+  margin-top: 80px;
   margin-left: 15px;
   font-family: Helvetica Neue;
   font-style: normal;
@@ -260,11 +261,7 @@ html,body {
   letter-spacing: 0.04em;
 }
 
-.center-main .check {
-  margin-bottom: 23px;
-}
-
-.main-id {
+.profile-id {
   font-family: Helvetica Neue;
   font-style: normal;
   font-weight: bold;
@@ -272,16 +269,27 @@ html,body {
   line-height: 23px;
   color: #4F565C;
   margin-left: 16px;
-  margin-top: -20px;
   letter-spacing: 0.04em;
 }
 
-.follow-btn {
-  margin-left: 450px;
-  margin-top: 20px;
+.profile-follow-block {
+  position: absolute;
+  margin-top: 15px;
+  right: 10px;
 }
 
-.center-text h2 {
+.round-button {
+  background-color: #EFF3F5;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 18px;
+  padding: 0 16px;
+  height: 30px;
+}
+
+
+.profile-text h2 {
   font-family: Helvetica Neue;
   font-style: normal;
   font-weight: bold;
@@ -293,68 +301,33 @@ html,body {
   margin-left: 15px;
 }
 
-.center-text-top {
+.profile-information {
   display: flex;
 }
 
-.center-map{
+.profile-map{
   display: flex;
   margin-top: 8px;
   margin-left: 16px;
 }
 
-.map-img {
-  width: 20px;
-  height: 22.35px;
-}
-
-.map-text {
-  margin-top: 1px;
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 23px;
-  letter-spacing: 0.05em;
-  color: #4F565C;
-}
-
-.center-link {
-  display: flex;
-  margin-left: 10px;
-  margin-top: 11px;
-}
-
-.link-img {
-  width: 18px;
-  height: 19px;
-}
-
-.link-text {
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 23px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  color: #0096F8;
-  margin-top: -2px;
-  margin-left: 2px;
-}
-
-.center-birtnday {
+.profile-birtnday {
   display: flex;
   margin-top: 8px;
   margin-left: 8px;
 }
 
-.birtnday-img {
-  width: 21px;
-  height: 24px;
+.profile-link {
+  display: flex;
+  margin-left: 10px;
+  margin-top:9px;
 }
 
-.birthday-text {
+.profile-link .profile-sab-text{
+  color: #0096F8;
+}
+
+.profile-sab-text {
   font-family: Helvetica Neue;
   font-style: normal;
   font-weight: bold;
@@ -363,32 +336,27 @@ html,body {
   text-align: center;
   letter-spacing: 0.1em;
   color: #4F565C;
-  margin-top: 2px;
-  margin-left: 3px;
 }
 
-.center-date {
+.profile-sab-img {
+  width: 20px;
+  height: 22.35px;
+}
+
+.profile-startdate {
   display: flex;
-  margin-left: 12px;
+  margin-left: 15px;
   margin-top: 2px;
 }
 
-.date-img {
-  width: 25px;
-  height: 25px;
+.profile-startdate .profile-sab-text {
+  margin-left: 6px;
 }
 
-.date-text {
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 23px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  color: #4F565C;
-  margin-left: 2px;
-  margin-top: 1px;
+.follows {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 0;
 }
 
 .follow {
@@ -400,8 +368,7 @@ html,body {
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
-  margin-right: 446px;
-  margin-top: 10px;
+  padding-left: 20px;
 }
 
 .follow span {
@@ -409,26 +376,14 @@ html,body {
   margin-left: 3px;
 }
 
-.follower {
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 23px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #FFFFFF;
-  margin-right: 187px;
-  margin-top: -24px;
+.tweet-menus {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: -30px;
 }
 
-.follower span {
-  line-height: 21px;
-  color: #4F565C;
-  margin-left: 4px;
-}
-
-.center-menu {
+.tweet-menu {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -436,106 +391,40 @@ html,body {
   line-height: 15px;
   letter-spacing: 0.1em;
   color: #4F565C;
-  margin-left: 25px;
-  margin-top: 33px;
-  display: flex;
+  padding-left: 70px;
 }
 
-.tweet {
-  margin-top: 1px;
+.tweet-menu:hover {
+  color: #FFFFFF;
   position: relative;
-  margin-left: 14px;
-  color: #fff;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  padding-bottom: 14px;
 }
 
-.tweet::after {
+.tweet-menu:hover::after {
   content: "";
   display: block;
   position: absolute;
-  width: 58px;
-  background-color: #0096F8;
+  left: 75%;
+  transform: translate(-50%);
+  bottom: -20px;
+  width: 50px;
   height: 3px;
-  left: 0%;
-  bottom: -3px;
+  background-color: #0096F8;
 }
 
-.send {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.1em;
-  color: #4F565C;
-  margin-left: 74px;
-  margin-top: 1px;
-}
-
-.media {
-  margin-left: 77px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.1em;
-  color: #4F565C;
-  margin-top: 1px;
-}
-
-.center-like {
-  margin-left: 480px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.1em;
-  color: #4F565C;
-  margin-top: -31px;
-}
-
-.tweet-box0 {
+.tweet-box {
   width: 562px;
   height: 100px;
   border-top: solid 1px #2E3337;
   border-bottom: solid 1px #2E3337;
-}
-
-.tweet-box-new {
-  width: 562px;
-  height: 100px;
-  border-top: solid 1px #2E3337;
-  border-bottom: solid 1px #2E3337;
-}
-
-.tweet-box1 {
-  width: 562px;
-  height: 100px;
-  border-top: solid 1px #2E3337;
-  border-bottom: solid 1px #2E3337;
-}
-
-.tweet-box2 {
-  width: 562px;
-  height: 100px;
-}
-
-.tweet-box2 .tweet-content {
-  margin-top: -28px;
+  display: block;
 }
 
 .tweet-detail {
   display: flex;
+  margin-top: -50px;
 }
 
-.tweet-profile {
+.tweet-profile-img {
   width: 65px;
   height: 55px;
   margin-left: 2px;
@@ -551,12 +440,6 @@ html,body {
   letter-spacing: 0.06em;
   color: #FFFFFF;
   margin-left: 73px;
-  margin-top: -50px;
-}
-
-.tweet-detail .check {
-  margin-top: -51px;
-  margin-left: 2px;
 }
 
 .tweet-account-date {
@@ -567,13 +450,11 @@ html,body {
   line-height: 16px;
   letter-spacing: -0.05em;
   color: #6D767E;
-  margin-top: -50px;
   margin-left: 3px;
 }
 
-.tweet-menu {
+.tweet-menu-data {
   margin-left: 221px;
-  margin-top: -50px;
   width: 33px;
   height: 15px
 }
@@ -587,7 +468,7 @@ html,body {
   letter-spacing: 0.06em;
   color: #FFFFFF;
   margin-left: 74px;
-  margin-top: -25px;
+  margin-top: 10px;
 }
 
 .tweet-bottom {
@@ -686,21 +567,6 @@ html,body {
   padding-top: 3px;
 }
 
-.login {
-  width: 100px;
-  height: 46px;
-  margin-left: 1060px;
-  margin-top: 9px;
-  margin-top: -85px;
-}
-
-.create {
-  width: 138px;
-  height: 56px;
-  margin-left: 6px;
-  margin-top: -85px;
-}
-
 #content-right {
   width: 479px;
   height: 100%;
@@ -708,21 +574,24 @@ html,body {
 }
 
 .search-box {
-  width: 348px;
-  height: 52px;
-  margin-left: 20px;
-}
-
-.login-box {
-  width: 328px;
-  height: 286px;
-  border-radius: 16px;
-  border: solid 1px #2E3337;
+  width: 330px;
+  height: 40px;
+  border-radius: 40px;
   margin-left: 30px;
-  margin-top: 6px;
+  padding-left: 50px;
+  background-color: #202329;
+  position: relative;
+  border: none;
+  color: #ffff;
 }
 
-.right-main-text {
+.search-img {
+  position: absolute;
+  margin-top: 8px;
+  left: 995px;
+}
+
+.login-box-top-main-text {
   margin-left: 15px;
   margin-top: 11px;
   font-family: Roboto;
@@ -734,7 +603,7 @@ html,body {
   color: #FFFFFF;
 }
 
-.right-sab-text {
+.login-box-top-text {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -744,29 +613,48 @@ html,body {
   color: #FFFFFF;
   margin-left: 13px;
   margin-top: 16px;
+  color: #6D767E;
+}
+
+.login-box {
+  width: 328px;
+  height: 286px;
+  border-radius: 16px;
+  border: solid 1px #2E3337;
+  margin-left: 30px;
+  margin-top: 6px;
 }
 
 .login-bnts {
-  width: 291px;
-  height: 149px;
+  display: block;
   margin-top: 15px;
-  margin-left: 9px;
 }
 
-.goole-login-box{
-  margin-bottom: 5px;
-}
-
-.apple-login-box {
+.login-btn {
+  width: 281px;
+  height: 37px;
+  border-radius: 70px;
+  margin-left: 20px;
   margin-bottom: 10px;
-  margin-left: 1px;
+  background-color: #ffff;
+  border: none;
 }
 
-.number-or-address-box {
-  margin-left: 1px;
+.login-btn:hover {
+  opacity: 0.9;
 }
 
-.right-text-bottom {
+.login-btn span {
+  color: #707376;
+}
+
+.login-box img {
+  height: 22px;
+  width: 22px;
+  margin-right: 8px;
+}
+
+.login-box-bottom-text {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -777,61 +665,52 @@ html,body {
   margin: 4px 12px 17px 13px;
 }
 
-.right-text-bottom span {
+.login-box-bottom-text span:hover {
+  border-bottom: solid 1px #0094F4;
+}
+
+.login-box-bottom-text span {
   color: #0094F4;
 }
 
-.left-top {
-  margin-top: 15px;
-  margin-left: 30px;
-  margin-right: -5px;
-  width: 108px;
-  height: 91px;
+.block-imgs {
+  margin-left: 25px;
+  margin-top: 20px;
+  width: 329px;
+  height: 185px;
 }
 
-.center-top {
-  margin-right: -5px;
-  margin-top: 18px;
-  width: 112px;
+.top-imgs {
+  display: flex;
+  width: 110px;
+  height: 93px;
+  border-bottom: solid 2px black;
+}
+
+.bottom-imgs {
+  display: flex;
+  width: 110px;
   height: 93px;
 }
 
-.right-top {
-  margin-top: 18px;
-  margin-left: -2px;
-  width: 108px;
-  height: 93px;
+.img-left {
+  border-right: solid 2px black;
 }
 
-.left-bottom {
-  margin-left: 31px;
-  margin-right: -5px;
-  width: 108px;
-  height: 93px;
+.img-right {
+  border-left: solid 2px black;
 }
 
-.center-bottom {
-  margin-top: 1px;
-  width: 111px;
-  height: 92px;
-  margin-right: -6px;
-}
-
-.right-bottom {
-  width: 107px;
-  height: 91px;
-}
-
-.right-bottom-content  {
+.recommended-blocks  {
   width: 328px;
   height: 190px;
   background-color: #14181C;
-  margin-top: 48px;
+  margin-top: 45px;
   border-radius: 15px 15px 0 0;
   margin-left: 32px;
 }
 
-.bottom-text {
+.recommended-tweet {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -843,92 +722,52 @@ html,body {
   padding-top: 11px;
 }
 
-.google-icon {
+.recommended-account {
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.account-information {
+  margin-right: 60px;
+}
+
+.google-account-follow-btn {
+  margin-left: 20px;
+}
+
+.round-button:hover {
+  opacity: 0.9;
+}
+
+.tweet-name-block {
+  display: flex;
+}
+
+.account-name-label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+}
+
+.account-id {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #6D767E;
+}
+
+.account-icon{
+  height: 44px;
   width: 44px;
-  height: 51px;
-  margin-left: 15px;
-  margin-top: 10px;
-}
-
-.google-name {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
-  margin-left: 71px;
-  margin-top: -43px;
-}
-
-.google-account .chack {
-  margin-left: 125px;
-  margin-top: -55px;
-  height: 25px;
-  width: 24px;
-}
-
-.google-account .account-id {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #6D767E;
-  margin-top: -22px;
-  margin-left: 70px;
-}
-
-.google-account .follow-btn {
-  width: 84px;
-  height: 39px;
-  margin-left: 80px;
-  margin-top: -40px;
-}
-
-.microsoft-icon {
-  width: 51px;
-  height: 51px;
-  margin-left: 12px;
-  margin-top: 18px;
-}
-
-.microsoft-name {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  color: #FFFFFF;
-  margin-left: 71px;
-  margin-top: -43px;
-}
-
-.microsoft-account .chack {
-  margin-left: 147px;
-  margin-top: -55px;
-  height: 25px;
-  width: 24px;
-}
-
-.microsoft-account .account-id {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: #6D767E;
-  margin-top: -48px;
-  margin-left: 70px;
-}
-
-.microsoft-account .follow-btn {
-  width: 84px;
-  height: 39px;
-  margin-left: 229px;
-  margin-top: -90px;
+  border-radius: 30px;
+  background-size: cover;
+  margin-right: 10px;
 }
