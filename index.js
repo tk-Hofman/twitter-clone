@@ -5,7 +5,7 @@
     var tweetBoxNew = document.createElement('div');
     var tweetDetail = document.createElement('div');
     var tweetBottom = document.createElement('div');
-    tweetBoxNew.setAttribute("class","tweet-box-new");
+    tweetBoxNew.setAttribute("class","tweet-box");
     tweetDetail.setAttribute("class","tweet-detail");
     tweetBottom.setAttribute("class","tweet-bottom");
 
@@ -24,12 +24,12 @@
     var share = document.createElement('img');
 
     tweetName.setAttribute("class","tweet-name");
-    tweetProfile.setAttribute("class","tweet-profile");
+    tweetProfile.setAttribute("class","tweet-profile-img");
     tweetProfile.setAttribute("src","twpr.png");
-    checkImg.setAttribute("class","check");
+    checkImg.setAttribute("class","official-mark");
     checkImg.setAttribute("src","ck.png");
     tweetAaccountDate.setAttribute("class","tweet-account-date");
-    tweetMenu.setAttribute("class","tweet-menu");
+    tweetMenu.setAttribute("class","tweet-menu-data");
     tweetMenu.setAttribute("src","ten.png");
     tweetContent.setAttribute("class","tweet-content");
     reply.setAttribute("class","reply");

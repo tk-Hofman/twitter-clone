@@ -301,68 +301,33 @@ html,body {
   margin-left: 15px;
 }
 
-.center-text-top {
+.profile-information {
   display: flex;
 }
 
-.center-map{
+.profile-map{
   display: flex;
   margin-top: 8px;
   margin-left: 16px;
 }
 
-.map-img {
-  width: 20px;
-  height: 22.35px;
-}
-
-.map-text {
-  margin-top: 1px;
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 23px;
-  letter-spacing: 0.05em;
-  color: #4F565C;
-}
-
-.center-link {
-  display: flex;
-  margin-left: 10px;
-  margin-top: 11px;
-}
-
-.link-img {
-  width: 18px;
-  height: 19px;
-}
-
-.link-text {
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 23px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  color: #0096F8;
-  margin-top: -2px;
-  margin-left: 2px;
-}
-
-.center-birtnday {
+.profile-birtnday {
   display: flex;
   margin-top: 8px;
   margin-left: 8px;
 }
 
-.birtnday-img {
-  width: 21px;
-  height: 24px;
+.profile-link {
+  display: flex;
+  margin-left: 10px;
+  margin-top:9px;
 }
 
-.birthday-text {
+.profile-link .profile-sab-text{
+  color: #0096F8;
+}
+
+.profile-sab-text {
   font-family: Helvetica Neue;
   font-style: normal;
   font-weight: bold;
@@ -371,32 +336,27 @@ html,body {
   text-align: center;
   letter-spacing: 0.1em;
   color: #4F565C;
-  margin-top: 2px;
-  margin-left: 3px;
 }
 
-.center-date {
+.profile-sab-img {
+  width: 20px;
+  height: 22.35px;
+}
+
+.profile-startdate {
   display: flex;
-  margin-left: 12px;
+  margin-left: 15px;
   margin-top: 2px;
 }
 
-.date-img {
-  width: 25px;
-  height: 25px;
+.profile-startdate .profile-sab-text {
+  margin-left: 6px;
 }
 
-.date-text {
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 23px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  color: #4F565C;
-  margin-left: 2px;
-  margin-top: 1px;
+.follows {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 0;
 }
 
 .follow {
@@ -408,8 +368,7 @@ html,body {
   text-align: center;
   letter-spacing: 0.04em;
   color: #FFFFFF;
-  margin-right: 446px;
-  margin-top: 10px;
+  padding-left: 20px;
 }
 
 .follow span {
@@ -417,26 +376,14 @@ html,body {
   margin-left: 3px;
 }
 
-.follower {
-  font-family: Helvetica Neue;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 23px;
-  text-align: center;
-  letter-spacing: 0.04em;
-  color: #FFFFFF;
-  margin-right: 187px;
-  margin-top: -24px;
+.tweet-menus {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: -30px;
 }
 
-.follower span {
-  line-height: 21px;
-  color: #4F565C;
-  margin-left: 4px;
-}
-
-.center-menu {
+.tweet-menu {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -444,106 +391,40 @@ html,body {
   line-height: 15px;
   letter-spacing: 0.1em;
   color: #4F565C;
-  margin-left: 25px;
-  margin-top: 33px;
-  display: flex;
+  padding-left: 70px;
 }
 
-.tweet {
-  margin-top: 1px;
+.tweet-menu:hover {
+  color: #FFFFFF;
   position: relative;
-  margin-left: 14px;
-  color: #fff;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  padding-bottom: 14px;
 }
 
-.tweet::after {
+.tweet-menu:hover::after {
   content: "";
   display: block;
   position: absolute;
-  width: 58px;
-  background-color: #0096F8;
+  left: 75%;
+  transform: translate(-50%);
+  bottom: -20px;
+  width: 50px;
   height: 3px;
-  left: 0%;
-  bottom: -3px;
+  background-color: #0096F8;
 }
 
-.send {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.1em;
-  color: #4F565C;
-  margin-left: 74px;
-  margin-top: 1px;
-}
-
-.media {
-  margin-left: 77px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.1em;
-  color: #4F565C;
-  margin-top: 1px;
-}
-
-.center-like {
-  margin-left: 480px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.1em;
-  color: #4F565C;
-  margin-top: -31px;
-}
-
-.tweet-box0 {
+.tweet-box {
   width: 562px;
   height: 100px;
   border-top: solid 1px #2E3337;
   border-bottom: solid 1px #2E3337;
-}
-
-.tweet-box-new {
-  width: 562px;
-  height: 100px;
-  border-top: solid 1px #2E3337;
-  border-bottom: solid 1px #2E3337;
-}
-
-.tweet-box1 {
-  width: 562px;
-  height: 100px;
-  border-top: solid 1px #2E3337;
-  border-bottom: solid 1px #2E3337;
-}
-
-.tweet-box2 {
-  width: 562px;
-  height: 100px;
-}
-
-.tweet-box2 .tweet-content {
-  margin-top: -28px;
+  display: block;
 }
 
 .tweet-detail {
   display: flex;
+  margin-top: -50px;
 }
 
-.tweet-profile {
+.tweet-profile-img {
   width: 65px;
   height: 55px;
   margin-left: 2px;
@@ -559,12 +440,6 @@ html,body {
   letter-spacing: 0.06em;
   color: #FFFFFF;
   margin-left: 73px;
-  margin-top: -50px;
-}
-
-.tweet-detail .check {
-  margin-top: -51px;
-  margin-left: 2px;
 }
 
 .tweet-account-date {
@@ -575,13 +450,11 @@ html,body {
   line-height: 16px;
   letter-spacing: -0.05em;
   color: #6D767E;
-  margin-top: -50px;
   margin-left: 3px;
 }
 
-.tweet-menu {
+.tweet-menu-data {
   margin-left: 221px;
-  margin-top: -50px;
   width: 33px;
   height: 15px
 }
@@ -595,7 +468,7 @@ html,body {
   letter-spacing: 0.06em;
   color: #FFFFFF;
   margin-left: 74px;
-  margin-top: -25px;
+  margin-top: 10px;
 }
 
 .tweet-bottom {
@@ -709,6 +582,7 @@ html,body {
   background-color: #202329;
   position: relative;
   border: none;
+  color: #ffff;
 }
 
 .search-img {
