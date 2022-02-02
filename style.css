@@ -566,6 +566,10 @@ html,body {
   background-color: black;
 }
 
+.content-right-search-block {
+  position: relative;
+}
+
 .search-box {
   width: 330px;
   height: 40px;
