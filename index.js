@@ -1,6 +1,14 @@
 'use strict';
 
   document.querySelector('#tweet-btn').addEventListener('click',() => {
+    document.querySelector('#modal').setAttribute("data-open",true);
+  });
+
+  document.querySelector('#modal-back').addEventListener('click',() => {
+    document.querySelector('#modal').removeAttribute("data-open");
+  });
+
+  document.querySelector('.new-tweet-send-btn').addEventListener('click',() => {
     var tweets = document.querySelector('#tweets :first-child');
     var tweetBoxNew = document.createElement('div');
     var tweetDetail = document.createElement('div');
@@ -15,6 +23,9 @@
     var tweetAaccountDate = document.createElement('div');
     var tweetMenu = document.createElement('img');
     var tweetContent = document.createElement('div');
+    var tweetBottomBlck1 = document.createElement('div');
+    var tweetBottomBlck2 = document.createElement('div');
+    var tweetBottomBlck3 = document.createElement('div');
     var reply = document.createElement('img');
     var replyNumber = document.createElement('div');
     var rt = document.createElement('img');
@@ -32,6 +43,9 @@
     tweetMenu.setAttribute("class","tweet-menu-data");
     tweetMenu.setAttribute("src","ten.png");
     tweetContent.setAttribute("class","tweet-content");
+    tweetBottomBlck1.setAttribute("class","tweet-bottom-blck");
+    tweetBottomBlck2.setAttribute("class","tweet-bottom-blck");
+    tweetBottomBlck3.setAttribute("class","tweet-bottom-blck");
     reply.setAttribute("class","reply");
     reply.setAttribute("src","rip.png");
     replyNumber.setAttribute("class","reply-number");
@@ -45,12 +59,18 @@
     share.setAttribute("src","ue.png");
     
 
+    var now = new Date();
+    var month = now.getMonth()+1;
+    var data = now.getDate();
+
+    
+
     tweetName.textContent = "Twetter"
-    tweetAaccountDate.textContent = "@Twetter・1月1日"
+    tweetAaccountDate.textContent = `@Twetter・${month}月${data}日`
     tweetContent.textContent = "新しいツイートです" 
-    replyNumber.textContent = "9000" 
-    rtNumber.textContent = "8万"
-    likeNumber.textContent = "3万"
+    replyNumber.textContent = "0" 
+    rtNumber.textContent = "0"
+    likeNumber.textContent = "0"
     
     tweetBoxNew.appendChild(tweetProfile);
     tweetBoxNew.appendChild(tweetDetail);
@@ -60,14 +80,17 @@
     tweetDetail.appendChild(tweetMenu);
     tweetBoxNew.appendChild(tweetContent);
     tweetBoxNew.appendChild(tweetBottom);
-    tweetBottom.appendChild(reply);
-    tweetBottom.appendChild(replyNumber);
-    tweetBottom.appendChild(rt);
-    tweetBottom.appendChild(rtNumber);
-    tweetBottom.appendChild(like);
-    tweetBottom.appendChild(likeNumber);
+    tweetBottom.appendChild(tweetBottomBlck1);
+    tweetBottom.appendChild(tweetBottomBlck2);
+    tweetBottom.appendChild(tweetBottomBlck3);
+    tweetBottomBlck1.appendChild(reply);
+    tweetBottomBlck1.appendChild(replyNumber);
+    tweetBottomBlck2.appendChild(rt);
+    tweetBottomBlck2.appendChild(rtNumber);
+    tweetBottomBlck3.appendChild(like);
+    tweetBottomBlck3.appendChild(likeNumber);
     tweetBottom.appendChild(share);
     
     tweets.before(tweetBoxNew);
-    
+    document.querySelector('#modal').removeAttribute("data-open");
   });
