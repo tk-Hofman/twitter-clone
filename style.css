@@ -237,15 +237,10 @@ html,body {
   margin-top: 8px;
 }
 
-.profile-icon {
-  margin-left: 11px;
-  width: 115px;
-  height: 115px;
+.profile-icon-block {
   position: absolute;
   top: 150px;
-  left: 10px;
-  border: solid 3px black;
-  border-radius: 50%;
+  left: 20px;
 }
 
 .profile-name {
@@ -416,11 +411,17 @@ html,body {
   border-top: solid 1px #2E3337;
   border-bottom: solid 1px #2E3337;
   display: block;
+  display: flex;
+  padding: 12px 0;
+}
+
+.tweet-box-left {
+  width: 48px;
+  margin-right: 12px;
 }
 
 .tweet-detail {
   display: flex;
-  margin-top: -50px;
 }
 
 .tweet-profile-img {
@@ -438,7 +439,6 @@ html,body {
   line-height: 16px;
   letter-spacing: 0.06em;
   color: #FFFFFF;
-  margin-left: 73px;
 }
 
 .tweet-account-date {
@@ -466,13 +466,12 @@ html,body {
   line-height: 15px;
   letter-spacing: 0.06em;
   color: #FFFFFF;
-  margin-left: 74px;
   margin-top: 10px;
   word-break: break-all;
 }
 
 .tweet-bottom {
-  justify-content: space-evenly;
+  justify-content: space-between;
   display: flex;
   margin-top: 20px;
 }
@@ -752,12 +751,21 @@ html,body {
   color: #6D767E;
 }
 
-.account-icon{
+.recommended-account-icon-block {
+  margin-right: 12px;
+}
+
+.account-icon {
   height: 44px;
   width: 44px;
-  border-radius: 30px;
+  border-radius: 50%;
   background-size: cover;
-  margin-right: 10px;
+  background-position: center center;
+}
+
+.account-icon.big {
+  width: 120px;
+  height: 120px;
 }
 
 
