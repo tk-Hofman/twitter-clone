@@ -63,11 +63,12 @@
     var month = now.getMonth()+1;
     var data = now.getDate();
 
-    
+    var textbox = document.getElementById("#tweet-up")
+    var value = textbox.value;
 
     tweetName.textContent = "Twetter"
     tweetAaccountDate.textContent = `@Twetter・${month}月${data}日`
-    tweetContent.textContent = "新しいツイートです" 
+    tweetContent.textContent = value 
     replyNumber.textContent = "0" 
     rtNumber.textContent = "0"
     likeNumber.textContent = "0"
@@ -90,6 +91,7 @@
     tweetBottomBlck3.appendChild(like);
     tweetBottomBlck3.appendChild(likeNumber);
     tweetBottom.appendChild(share);
+
     
     tweets.before(tweetBoxNew);
     document.querySelector('#modal').removeAttribute("data-open");
