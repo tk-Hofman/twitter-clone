@@ -418,7 +418,7 @@ h1 .official-mark{
   cursor: default;
 }
 
-.tweet-profile-tab-item a:active {
+.tweet-profile-tab-item.selected {
   font-family: Hiragino Sans;
   font-style: normal;
   font-weight: 800;
@@ -429,7 +429,7 @@ h1 .official-mark{
   position: relative;
 }
 
-.tweet-profile-tab-item a:active::after {
+.tweet-profile-tab-item.selected:after {
   content: "";
   display: block;
   position: absolute;
