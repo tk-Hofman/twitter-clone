@@ -17,7 +17,9 @@
     tweetDetail.setAttribute("class","tweet-detail");
     tweetBottom.setAttribute("class","tweet-bottom");
 
-    var tweetProfile = document.createElement('img');
+    var tweetBoxLeft = document.createElement('div');
+    var accountIcon = document.createElement ('div')
+    var tweetBoxRight = document.createElement('div');
     var tweetName = document.createElement('h3');
     var checkImg = document.createElement('img');
     var tweetAaccountDate = document.createElement('div');
@@ -33,53 +35,64 @@
     var like = document.createElement('img');
     var likeNumber = document.createElement('div');
     var share = document.createElement('img');
+  
 
+    tweetBoxLeft.setAttribute("class","tweet-box-left");
+    accountIcon.setAttribute("class","account-icon")
+    tweetBoxRight.setAttribute("class","tweet-box-right");
     tweetName.setAttribute("class","tweet-name");
-    tweetProfile.setAttribute("class","tweet-profile-img");
-    tweetProfile.setAttribute("src","twpr.png");
     checkImg.setAttribute("class","official-mark");
-    checkImg.setAttribute("src","ck.png");
+    checkImg.setAttribute("src","img/ck.png");
     tweetAaccountDate.setAttribute("class","tweet-account-date");
     tweetMenu.setAttribute("class","tweet-menu-data");
-    tweetMenu.setAttribute("src","ten.png");
+    tweetMenu.setAttribute("src","img/ten.png");
     tweetContent.setAttribute("class","tweet-content");
     tweetBottomBlck1.setAttribute("class","tweet-bottom-blck");
     tweetBottomBlck2.setAttribute("class","tweet-bottom-blck");
     tweetBottomBlck3.setAttribute("class","tweet-bottom-blck");
     reply.setAttribute("class","reply");
-    reply.setAttribute("src","rip.png");
+    reply.setAttribute("src","img/rip.png");
     replyNumber.setAttribute("class","reply-number");
     rt.setAttribute("class","rt");
-    rt.setAttribute("src","rit.png");
+    rt.setAttribute("src","img/rit.png");
     rtNumber.setAttribute("class","rt-number");
     like.setAttribute("class","like");
-    like.setAttribute("src","like.png");
+    like.setAttribute("src","img/like.png");
     likeNumber.setAttribute("class","like-number");
     share.setAttribute("class","share");
-    share.setAttribute("src","ue.png");
+    share.setAttribute("src","img/ue.png");
     
 
     var now = new Date();
     var month = now.getMonth()+1;
     var data = now.getDate();
 
-    
-
     tweetName.textContent = "Twetter"
     tweetAaccountDate.textContent = `@Twetter・${month}月${data}日`
-    tweetContent.textContent = "新しいツイートです" 
+    tweetContent.textContent = ""
     replyNumber.textContent = "0" 
     rtNumber.textContent = "0"
     likeNumber.textContent = "0"
+
+    function buttonClick() {
+      tweetContent.textContent.innerText = textbox.value;
+    }
+
+    var textbox = document.getElementById('tweet-up');
+    var newTweetAendBtn = document.querySelector('.new-tweet-send-btn');
+    newTweetAendBtn.addEventListener('click',buttonClick);
+
     
-    tweetBoxNew.appendChild(tweetProfile);
-    tweetBoxNew.appendChild(tweetDetail);
+    tweetBoxNew.appendChild(tweetBoxLeft);
+    tweetBoxLeft.appendChild(accountIcon);
+    tweetBoxNew.appendChild(tweetBoxRight);
+    tweetBoxRight.appendChild(tweetDetail);
     tweetDetail.appendChild(tweetName);
     tweetDetail.appendChild(checkImg);
     tweetDetail.appendChild(tweetAaccountDate);
     tweetDetail.appendChild(tweetMenu);
-    tweetBoxNew.appendChild(tweetContent);
-    tweetBoxNew.appendChild(tweetBottom);
+    tweetBoxRight.appendChild(tweetContent);
+    tweetBoxRight.appendChild(tweetBottom);
     tweetBottom.appendChild(tweetBottomBlck1);
     tweetBottom.appendChild(tweetBottomBlck2);
     tweetBottom.appendChild(tweetBottomBlck3);
@@ -90,6 +103,7 @@
     tweetBottomBlck3.appendChild(like);
     tweetBottomBlck3.appendChild(likeNumber);
     tweetBottom.appendChild(share);
+
     
     tweets.before(tweetBoxNew);
     document.querySelector('#modal').removeAttribute("data-open");
