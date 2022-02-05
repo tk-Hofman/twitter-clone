@@ -169,7 +169,7 @@ html,body {
 
 #content-center {
   width: 560px;
-  height: 100%;
+  min-height: 100%;
   background-color: black;
   border-right: solid 1px #2E3337;
 }
@@ -220,7 +220,7 @@ html,body {
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  color: #6D767E;
+  color: #6E767D;
   margin-left: 29px;
   margin-top: 5px;
 }
@@ -262,7 +262,7 @@ html,body {
   font-weight: bold;
   font-size: 13px;
   line-height: 23px;
-  color: #4F565C;
+  color: #6E767D;
   margin-left: 16px;
   letter-spacing: 0.04em;
 }
@@ -281,6 +281,11 @@ html,body {
   border-radius: 18px;
   padding: 0 16px;
   height: 30px;
+}
+
+h1 .official-mark{
+  margin-top: -12px;
+  margin-left: 2px;
 }
 
 
@@ -330,7 +335,7 @@ html,body {
   line-height: 23px;
   text-align: center;
   letter-spacing: 0.1em;
-  color: #4F565C;
+  color: #6E767D;
 }
 
 .profile-sab-img {
@@ -371,40 +376,73 @@ html,body {
   margin-left: 3px;
 }
 
-.tweet-menus {
+.tweet-profile-tab {
   display: flex;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  margin-left: -30px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0px 35px;
+  width: 510px;
+  height: 36px;
+  left: 20px;
+  top: 20px;
 }
 
-.tweet-menu {
-  font-family: Roboto;
+.tweet-profile-tab-item {
+  font-family: Hiragino Sans;
   font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: 0.1em;
-  color: #4F565C;
-  padding-left: 70px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  color: #6E767D;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 10px 0px;
 }
 
-.tweet-menu:hover {
+.tweet-profile-tab-item:hover {
+  width: 141px;
+  height: 53px;
+  background-color: rgba(217, 217, 217, 0.1);
+  background-position: center;
+  text-align: center;
+  transition: 0.3s;
+  }
+
+.tweet-profile-tab-item a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+}
+
+.tweet-profile-tab-item a:active {
+  font-family: Hiragino Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.01em;
   color: #FFFFFF;
   position: relative;
 }
 
-.tweet-menu:hover::after {
+.tweet-profile-tab-item a:active::after {
   content: "";
   display: block;
   position: absolute;
-  left: 75%;
   transform: translate(-50%);
-  bottom: -20px;
-  width: 50px;
+  bottom: -22px;
+  left: 25px;
+  width: 90%;
   height: 3px;
   background-color: #0096F8;
+  border-radius: 20px;
 }
+
+
 
 .tweet-box {
   width: 562px;
@@ -415,13 +453,23 @@ html,body {
   padding: 12px 0;
 }
 
+.tweet-box:hover {
+  background-color: #080808;
+  transition: 0.3s;
+}
+
 .tweet-box-left {
   width: 48px;
-  margin-right: 12px;
+  margin-right: 5px;
 }
 
 .tweet-detail {
   display: flex;
+}
+
+.tweet-detail .official-mark {
+  margin-top: 2px;
+  margin-left: 2px;
 }
 
 .tweet-profile-img {
@@ -432,13 +480,14 @@ html,body {
 }
 
 .tweet-name {
-  font-family: Roboto;
+  font-family: Helvetica Neue;
   font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.06em;
-  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 23px;
+  color: #fff;
+  display: inline-block;
+  letter-spacing: 0.05em;
 }
 
 .tweet-account-date {
@@ -448,8 +497,9 @@ html,body {
   font-size: 14px;
   line-height: 16px;
   letter-spacing: -0.05em;
-  color: #6D767E;
+  color: #6E767D;
   margin-left: 3px;
+  margin-top: 5px;
 }
 
 .tweet-menu-data {
@@ -495,6 +545,7 @@ html,body {
   line-height: 13px;
   letter-spacing: 0.06em;
   color: #FFFFFF;
+  padding-left: 10px;
 }
 
 .rt {
@@ -509,6 +560,7 @@ html,body {
   font-size: 12px;
   line-height: 14px;
   color: #FFFFFF;
+  padding-left: 10px;
 }
 
 .like {
@@ -523,6 +575,7 @@ html,body {
   font-size: 13px;
   line-height: 15px;
   color: #FFFFFF;
+  padding-left: 10px;
 }
 
 .share {
@@ -609,7 +662,7 @@ html,body {
   color: #FFFFFF;
   margin-left: 13px;
   margin-top: 16px;
-  color: #6D767E;
+  color: 687078;
 }
 
 .login-box {
@@ -752,7 +805,7 @@ html,body {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
-  color: #6D767E;
+  color: #6E767D;
 }
 
 .recommended-account-icon-block {
@@ -765,6 +818,7 @@ html,body {
   border-radius: 50%;
   background-size: cover;
   background-position: center center;
+  background-image: url("img/twpr.png");
 }
 
 .account-icon.big {
@@ -777,7 +831,7 @@ html,body {
 
 .new-tweet-box {
   width: 639px;
-  height: 297px;
+  height: 320px;
   background: #000000;
   border-radius: 15px;
   margin-top: -420px;
