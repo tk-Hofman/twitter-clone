@@ -379,7 +379,6 @@ h1 .official-mark{
 .tweet-profile-tab {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin-top: 20px;
   padding: 0px 35px;
   width: 510px;
@@ -400,6 +399,7 @@ h1 .official-mark{
   order: 0;
   flex-grow: 0;
   margin: 10px 0px;
+  flex: 1;
 }
 
 .tweet-profile-tab-item:hover {
@@ -419,24 +419,17 @@ h1 .official-mark{
 }
 
 .tweet-profile-tab-item.selected {
-  font-family: Hiragino Sans;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: 0.01em;
   color: #FFFFFF;
-  position: relative;
+  font-weight: 800;
 }
 
-.tweet-profile-tab-item.selected:after {
+.tweet-profile-tab-item.selected a:after {
   content: "";
   display: block;
   position: absolute;
-  transform: translate(-50%);
   bottom: -22px;
-  left: 25px;
-  width: 90%;
+  left: 0;
+  right: 0;
   height: 3px;
   background-color: #0096F8;
   border-radius: 20px;
