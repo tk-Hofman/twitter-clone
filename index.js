@@ -1,6 +1,9 @@
 'use strict';
 import { createTweetView } from './script/createTweetView.js'
+import { loadTweets } from './script/loadTweets.js'
 
+  const lodedTweets = loadTweets();
+  console.log(lodedTweets);
   document.querySelector('#tweet-btn').addEventListener('click',() => {
     document.querySelector('#modal').setAttribute("data-open",true);
   });
@@ -17,4 +20,6 @@ import { createTweetView } from './script/createTweetView.js'
     createTweetView(textbox.value)
     document.querySelector('#modal').removeAttribute("data-open");
   }
+
+
 

@@ -1,5 +1,4 @@
 export function createTweetView (message) {
-    var tweets = document.querySelector('#tweets :first-child');
     var tweetBoxNew = document.createElement('div');
     var tweetDetail = document.createElement('div');
     var tweetBottom = document.createElement('div');
@@ -83,5 +82,6 @@ export function createTweetView (message) {
     tweetBottomBlck3.appendChild(like);
     tweetBottomBlck3.appendChild(likeNumber);
     tweetBottom.appendChild(share);
-    tweets.before(tweetBoxNew);
+    var tweets = document.querySelector('#tweets');
+    tweets.prepend(tweetBoxNew);
 }
