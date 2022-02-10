@@ -1,11 +1,12 @@
 export function createTweetView (message) {
+
     var tweetBoxNew = document.createElement('div');
     var tweetDetail = document.createElement('div');
     var tweetBottom = document.createElement('div');
     tweetBoxNew.setAttribute("class","tweet-box");
     tweetDetail.setAttribute("class","tweet-detail");
     tweetBottom.setAttribute("class","tweet-bottom");
-
+  
     var tweetBoxLeft = document.createElement('div');
     var accountIcon = document.createElement ('div')
     var tweetBoxRight = document.createElement('div');
@@ -60,8 +61,8 @@ export function createTweetView (message) {
     replyNumber.textContent = "0" 
     rtNumber.textContent = "0"
     likeNumber.textContent = "0"
-    
     tweetContent.textContent = message; 
+    
     tweetBoxNew.appendChild(tweetBoxLeft);
     tweetBoxLeft.appendChild(accountIcon);
     tweetBoxNew.appendChild(tweetBoxRight);
