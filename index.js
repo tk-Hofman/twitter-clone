@@ -8,7 +8,11 @@
     document.querySelector('#modal').removeAttribute("data-open");
   });
 
-  document.querySelector('.new-tweet-send-btn').addEventListener('click',() => {
+  var textbox = document.getElementById('tweet-input');
+  var newTweetAendBtn = document.querySelector('.new-tweet-send-btn');
+  newTweetAendBtn.addEventListener('click',buttonClick);
+
+  function buttonClick() {
     var tweets = document.querySelector('#tweets :first-child');
     var tweetBoxNew = document.createElement('div');
     var tweetDetail = document.createElement('div');
@@ -35,7 +39,7 @@
     var like = document.createElement('img');
     var likeNumber = document.createElement('div');
     var share = document.createElement('img');
-  
+
 
     tweetBoxLeft.setAttribute("class","tweet-box-left");
     accountIcon.setAttribute("class","account-icon")
@@ -61,7 +65,6 @@
     likeNumber.setAttribute("class","like-number");
     share.setAttribute("class","share");
     share.setAttribute("src","img/ue.png");
-    
 
     var now = new Date();
     var month = now.getMonth()+1;
@@ -69,20 +72,12 @@
 
     tweetName.textContent = "Twetter"
     tweetAaccountDate.textContent = `@Twetter・${month}月${data}日`
-    tweetContent.textContent = ""
     replyNumber.textContent = "0" 
     rtNumber.textContent = "0"
     likeNumber.textContent = "0"
 
-    function buttonClick() {
-      tweetContent.textContent.innerText = textbox.value;
-    }
-
-    var textbox = document.getElementById('tweet-up');
-    var newTweetAendBtn = document.querySelector('.new-tweet-send-btn');
-    newTweetAendBtn.addEventListener('click',buttonClick);
-
-    
+    console.log(textbox.value);
+    tweetContent.textContent = textbox.value; 
     tweetBoxNew.appendChild(tweetBoxLeft);
     tweetBoxLeft.appendChild(accountIcon);
     tweetBoxNew.appendChild(tweetBoxRight);
@@ -103,8 +98,7 @@
     tweetBottomBlck3.appendChild(like);
     tweetBottomBlck3.appendChild(likeNumber);
     tweetBottom.appendChild(share);
-
-    
     tweets.before(tweetBoxNew);
     document.querySelector('#modal').removeAttribute("data-open");
-  });
+  }
+
