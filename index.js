@@ -8,11 +8,11 @@ console.log(lodedTweets);
 function defaultTweet() {
   document.querySelector('#modal').removeAttribute("data-open");
   for(let i = 0; i < lodedTweets.length; i++ ) {
-    createTweetView(loadTweets[i]);
+    createTweetView(lodedTweets[i]);
   }
 }
 
-defaultTweet();
+defaultTweet(lodedTweets);
 
   document.querySelector('#tweet-btn').addEventListener('click',() => {
     document.querySelector('#modal').setAttribute("data-open",true);
