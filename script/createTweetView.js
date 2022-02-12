@@ -1,4 +1,4 @@
-export function createTweetView (message) {
+export function createTweetView (message,like) {
 
     var tweetBoxNew = document.createElement('div');
     var tweetDetail = document.createElement('div');
@@ -60,7 +60,7 @@ export function createTweetView (message) {
     tweetAaccountDate.textContent = `@Twetter・${month}月${data}日`
     replyNumber.textContent = "0" 
     rtNumber.textContent = "0"
-    likeNumber.textContent = "0"
+    likeNumber.textContent = like;
     tweetContent.textContent = message; 
     
     tweetBoxNew.appendChild(tweetBoxLeft);
