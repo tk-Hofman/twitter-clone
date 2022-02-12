@@ -8,7 +8,7 @@ console.log(lodedTweets);
 function defaultTweet() {
   document.querySelector('#modal').removeAttribute("data-open");
   for(let i = 0; i < lodedTweets.length; i++ ) {
-    createTweetView(lodedTweets[i].message,lodedTweets[i].like);
+    createTweetView(lodedTweets[i]);
   }
 }
 

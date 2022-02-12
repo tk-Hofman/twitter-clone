@@ -1,4 +1,4 @@
-export function createTweetView (message,like) {
+export function createTweetView (tweetData) {
 
     var tweetBoxNew = document.createElement('div');
     var tweetDetail = document.createElement('div');
@@ -22,7 +22,7 @@ export function createTweetView (message,like) {
     var replyNumber = document.createElement('div');
     var rt = document.createElement('img');
     var rtNumber = document.createElement('div');
-    var like = document.createElement('img');
+    var likeIcon = document.createElement('img');
     var likeNumber = document.createElement('div');
     var share = document.createElement('img');
 
@@ -46,8 +46,8 @@ export function createTweetView (message,like) {
     rt.setAttribute("class","rt");
     rt.setAttribute("src","img/rit.png");
     rtNumber.setAttribute("class","rt-number");
-    like.setAttribute("class","like");
-    like.setAttribute("src","img/like.png");
+    likeIcon.setAttribute("class","like-icon");
+    likeIcon.setAttribute("src","img/like.png");
     likeNumber.setAttribute("class","like-number");
     share.setAttribute("class","share");
     share.setAttribute("src","img/ue.png");
@@ -60,8 +60,8 @@ export function createTweetView (message,like) {
     tweetAaccountDate.textContent = `@Twetter・${month}月${data}日`
     replyNumber.textContent = "0" 
     rtNumber.textContent = "0"
-    likeNumber.textContent = like;
-    tweetContent.textContent = message; 
+    likeNumber.textContent = tweetData.like;
+    tweetContent.textContent =tweetData.message; 
     
     tweetBoxNew.appendChild(tweetBoxLeft);
     tweetBoxLeft.appendChild(accountIcon);
@@ -80,7 +80,7 @@ export function createTweetView (message,like) {
     tweetBottomBlck1.appendChild(replyNumber);
     tweetBottomBlck2.appendChild(rt);
     tweetBottomBlck2.appendChild(rtNumber);
-    tweetBottomBlck3.appendChild(like);
+    tweetBottomBlck3.appendChild(likeIcon);
     tweetBottomBlck3.appendChild(likeNumber);
     tweetBottom.appendChild(share);
     var tweets = document.querySelector('#tweets');
