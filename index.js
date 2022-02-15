@@ -1,14 +1,21 @@
 'use strict';
 import { createTweetView } from './script/createTweetView.js'
-import { loadTweets } from './script/loadTweets.js'
+import { loadTweets, onChange, addLike } from './script/TweetStore.js'
+
+function reDrawTweets() {
+  defaultTweet(loadTweets());
+}
+
+onChange(reDrawTweets)
 
 const lodedTweets = loadTweets();
 console.log(lodedTweets);
 
-function defaultTweet() {
+function defaultTweet(tweets) {
   document.querySelector('#modal').removeAttribute("data-open");
-  for(let i = 0; i < lodedTweets.length; i++ ) {
-    createTweetView(lodedTweets[i]);
+  document.querySelector('#tweets').innerHTML='';
+  for(let i = 0; i < tweets.length; i++ ) {
+    createTweetView(tweets[i]);
   }
 }
 
@@ -30,3 +37,6 @@ defaultTweet(lodedTweets);
     createTweetView(textbox.value)
     document.querySelector('#modal').removeAttribute("data-open");
   }
+  
+  var likeButton = document.querySelector('.like-icon');
+  likeButton.addEventListener('click',addLike);

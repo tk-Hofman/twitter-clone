@@ -22,7 +22,7 @@ export function createTweetView (tweetData) {
     var replyNumber = document.createElement('div');
     var rt = document.createElement('img');
     var rtNumber = document.createElement('div');
-    var likeIcon = document.createElement('img');
+    var likeIcon = document.createElement('button');
     var likeNumber = document.createElement('div');
     var share = document.createElement('img');
 
@@ -47,7 +47,7 @@ export function createTweetView (tweetData) {
     rt.setAttribute("src","img/rit.png");
     rtNumber.setAttribute("class","rt-number");
     likeIcon.setAttribute("class","like-icon");
-    likeIcon.setAttribute("src","img/like.png");
+    likeIcon.setAttribute("type","img/like.png");
     likeNumber.setAttribute("class","like-number");
     share.setAttribute("class","share");
     share.setAttribute("src","img/ue.png");
