@@ -1,3 +1,6 @@
+import { addLike } from "./TweetStore.js";
+
+
 export function createTweetView (tweetData) {
 
     var tweetBoxNew = document.createElement('div');
@@ -15,9 +18,14 @@ export function createTweetView (tweetData) {
     var tweetAaccountDate = document.createElement('div');
     var tweetMenu = document.createElement('img');
     var tweetContent = document.createElement('div');
-    var tweetBottomBlck1 = document.createElement('div');
-    var tweetBottomBlck2 = document.createElement('div');
-    var tweetBottomBlck3 = document.createElement('div');
+    var tweetBottomBlckReply = document.createElement('div');
+    var tweetBottomBlockRt = document.createElement('div');
+    var tweetBottomBlockLike = document.createElement('div');
+
+    tweetBottomBlockLike.addEventListener('click',() => {
+      addLike(tweetData.id);
+    })
+
     var reply = document.createElement('img');
     var replyNumber = document.createElement('div');
     var rt = document.createElement('img');
@@ -37,9 +45,9 @@ export function createTweetView (tweetData) {
     tweetMenu.setAttribute("class","tweet-menu-data");
     tweetMenu.setAttribute("src","img/ten.png");
     tweetContent.setAttribute("class","tweet-content");
-    tweetBottomBlck1.setAttribute("class","tweet-bottom-blck");
-    tweetBottomBlck2.setAttribute("class","tweet-bottom-blck");
-    tweetBottomBlck3.setAttribute("class","tweet-bottom-blck");
+    tweetBottomBlckReply.setAttribute("class","tweet-bottom-blck");
+    tweetBottomBlockRt.setAttribute("class","tweet-bottom-blck");
+    tweetBottomBlockLike.setAttribute("class","tweet-bottom-blck");
     reply.setAttribute("class","reply");
     reply.setAttribute("src","img/rip.png");
     replyNumber.setAttribute("class","reply-number");
@@ -73,15 +81,15 @@ export function createTweetView (tweetData) {
     tweetDetail.appendChild(tweetMenu);
     tweetBoxRight.appendChild(tweetContent);
     tweetBoxRight.appendChild(tweetBottom);
-    tweetBottom.appendChild(tweetBottomBlck1);
-    tweetBottom.appendChild(tweetBottomBlck2);
-    tweetBottom.appendChild(tweetBottomBlck3);
-    tweetBottomBlck1.appendChild(reply);
-    tweetBottomBlck1.appendChild(replyNumber);
-    tweetBottomBlck2.appendChild(rt);
-    tweetBottomBlck2.appendChild(rtNumber);
-    tweetBottomBlck3.appendChild(likeIcon);
-    tweetBottomBlck3.appendChild(likeNumber);
+    tweetBottom.appendChild(tweetBottomBlckReply);
+    tweetBottom.appendChild(tweetBottomBlockRt);
+    tweetBottom.appendChild(tweetBottomBlockLike);
+    tweetBottomBlckReply.appendChild(reply);
+    tweetBottomBlckReply.appendChild(replyNumber);
+    tweetBottomBlockRt.appendChild(rt);
+    tweetBottomBlockRt.appendChild(rtNumber);
+    tweetBottomBlockLike.appendChild(likeIcon);
+    tweetBottomBlockLike.appendChild(likeNumber);
     tweetBottom.appendChild(share);
     var tweets = document.querySelector('#tweets');
     tweets.prepend(tweetBoxNew);

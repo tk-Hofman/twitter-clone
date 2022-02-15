@@ -11,10 +11,9 @@ export function loadTweets() {
   return tweetMessages;
 }
 
-
 export function addLike(id) {
-  //TODO: 引数のIDを使ってツイートメッセージズのlikeを増やす
-    
+    const extractedTweetMessage = tweetMessages.find(element => element.id === id)
+    extractedTweetMessage.like++;
     changeHandler();
  }
 

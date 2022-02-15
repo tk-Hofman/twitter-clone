@@ -38,5 +38,4 @@ defaultTweet(lodedTweets);
     document.querySelector('#modal').removeAttribute("data-open");
   }
   
-  var likeButton = document.querySelector('.like-icon');
-  likeButton.addEventListener('click',addLike);
+  
