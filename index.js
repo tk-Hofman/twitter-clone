@@ -26,10 +26,9 @@ defaultTweet(lodedTweets);
   });
 
   document.querySelector('.new-tweet-send-btn').addEventListener('click',() => {
-    let tweetBox =  document.getElementById('tweet-input').value;
+    const tweetText =  document.getElementById('tweet-input').value;
     document.querySelector('#modal').removeAttribute("data-open");
-    createTweetView(tweetBox);
-    console.log(tweetBox);
+    createTweetView({message: tweetText , like: 0, id: Math.random().toString()});
   });
 
   document.querySelector('#modal-back').addEventListener('click',() => {

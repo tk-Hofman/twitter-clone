@@ -2,7 +2,7 @@ import { addLike } from "./TweetStore.js";
 
 
 export function createTweetView (tweetData) {
-
+  console.log("createTweetView",tweetData);
     var tweetBoxNew = document.createElement('div');
     var tweetDetail = document.createElement('div');
     var tweetBottom = document.createElement('div');
