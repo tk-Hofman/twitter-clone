@@ -13,8 +13,8 @@ export function loadTweets() {
 
 export function addLike(id) {
     const extractedTweetMessage = tweetMessages.find(element => element.id === id)
-    extractedTweetMessage.like++;
-    changeHandler();
+      extractedTweetMessage.like++;
+      changeHandler();
  }
 
 let changeHandler

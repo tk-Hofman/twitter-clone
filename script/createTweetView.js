@@ -60,16 +60,16 @@ export function createTweetView (tweetData) {
     share.setAttribute("class","share");
     share.setAttribute("src","img/ue.png");
 
-    var now = new Date();
-    var month = now.getMonth()+1;
-    var data = now.getDate();
+    var tweetNow = new Date();
+    var tweetMonth = tweetNow.getMonth()+1;
+    var tweetDate = tweetNow.getDate();
 
     tweetName.textContent = "Twetter"
-    tweetAaccountDate.textContent = `@Twetter・${month}月${data}日`
+    tweetAaccountDate.textContent = `@Twetter・${tweetMonth}月${tweetDate}日`
     replyNumber.textContent = "0" 
     rtNumber.textContent = "0"
     likeNumber.textContent = tweetData.like;
-    tweetContent.textContent =tweetData.message; 
+    tweetContent.textContent = tweetData.message;
     
     tweetBoxNew.appendChild(tweetBoxLeft);
     tweetBoxLeft.appendChild(accountIcon);

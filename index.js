@@ -1,6 +1,6 @@
 'use strict';
 import { createTweetView } from './script/createTweetView.js'
-import { loadTweets, onChange, addLike } from './script/TweetStore.js'
+import { loadTweets, onChange } from './script/TweetStore.js'
 
 function reDrawTweets() {
   defaultTweet(loadTweets());
@@ -25,17 +25,15 @@ defaultTweet(lodedTweets);
     document.querySelector('#modal').setAttribute("data-open",true);
   });
 
+  document.querySelector('.new-tweet-send-btn').addEventListener('click',() => {
+    let tweetBox =  document.getElementById('tweet-input').value;
+    document.querySelector('#modal').removeAttribute("data-open");
+    createTweetView(tweetBox);
+    console.log(tweetBox);
+  });
+
   document.querySelector('#modal-back').addEventListener('click',() => {
     document.querySelector('#modal').removeAttribute("data-open");
   });
 
-  var textbox = document.getElementById('tweet-input');
-  var newTweetAendBtn = document.querySelector('.new-tweet-send-btn');
-  newTweetAendBtn.addEventListener('click',buttonClick);
-
-  function buttonClick() {
-    createTweetView(textbox.value)
-    document.querySelector('#modal').removeAttribute("data-open");
-  }
-  
   
