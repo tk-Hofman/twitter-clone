@@ -1,6 +1,7 @@
 'use strict';
 import { createTweetView } from './script/createTweetView.js'
-import { loadTweets, onChange } from './script/TweetStore.js'
+import { loadTweets, onChange, addMessage} from './script/TweetStore.js'
+
 
 function reDrawTweets() {
   defaultTweet(loadTweets());
@@ -28,7 +29,7 @@ defaultTweet(lodedTweets);
   document.querySelector('.new-tweet-send-btn').addEventListener('click',() => {
     const tweetText =  document.getElementById('tweet-input').value;
     document.querySelector('#modal').removeAttribute("data-open");
-    createTweetView({message: tweetText , like: 0, id: Math.random().toString()});
+    addMessage(tweetText);
   });
 
   document.querySelector('#modal-back').addEventListener('click',() => {

@@ -7,6 +7,13 @@ const tweetMessages = [
   {message: "ご馳走様です", like: 31, id: "javascript"}
 ];
 
+export function addMessage(message) {
+  // tweetMessagesの末尾に他のオブジェクトと同じ形式で追加する
+  const newTweetContent = {message: message, like: 0, id: Math.random().toString()};
+  tweetMessages.push(newTweetContent);
+  changeHandler();
+}
+
 export function loadTweets() {
   return tweetMessages;
 }
