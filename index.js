@@ -1,14 +1,22 @@
 'use strict';
 import { createTweetView } from './script/createTweetView.js'
-import { loadTweets } from './script/loadTweets.js'
+import { loadTweets, onChange, addMessage} from './script/TweetStore.js'
+
+
+function reDrawTweets() {
+  defaultTweet(loadTweets());
+}
+
+onChange(reDrawTweets)
 
 const lodedTweets = loadTweets();
 console.log(lodedTweets);
 
-function defaultTweet() {
+function defaultTweet(tweets) {
   document.querySelector('#modal').removeAttribute("data-open");
-  for(let i = 0; i < lodedTweets.length; i++ ) {
-    createTweetView(lodedTweets[i]);
+  document.querySelector('#tweets').innerHTML='';
+  for(let i = 0; i < tweets.length; i++ ) {
+    createTweetView(tweets[i]);
   }
 }
 
@@ -18,15 +26,14 @@ defaultTweet(lodedTweets);
     document.querySelector('#modal').setAttribute("data-open",true);
   });
 
+  document.querySelector('.new-tweet-send-btn').addEventListener('click',() => {
+    const tweetText =  document.getElementById('tweet-input').value;
+    document.querySelector('#modal').removeAttribute("data-open");
+    addMessage(tweetText);
+  });
+
   document.querySelector('#modal-back').addEventListener('click',() => {
     document.querySelector('#modal').removeAttribute("data-open");
   });
 
-  var textbox = document.getElementById('tweet-input');
-  var newTweetAendBtn = document.querySelector('.new-tweet-send-btn');
-  newTweetAendBtn.addEventListener('click',buttonClick);
-
-  function buttonClick() {
-    createTweetView(textbox.value)
-    document.querySelector('#modal').removeAttribute("data-open");
-  }
+  
