@@ -1,16 +1,13 @@
 'use strict';
 import { createTweetView } from './script/createTweetView.js'
-import { loadTweets, onChange, addMessage} from './script/TweetStore.js'
-
+import { getTweets, onChange, addMessage, loadTweets } from './script/TweetStore.js'
 
 function reDrawTweets() {
-  defaultTweet(loadTweets());
+  defaultTweet(getTweets());
 }
 
 onChange(reDrawTweets)
-
-const lodedTweets = loadTweets();
-console.log(lodedTweets);
+loadTweets();
 
 function defaultTweet(tweets) {
   document.querySelector('#modal').removeAttribute("data-open");
@@ -19,8 +16,6 @@ function defaultTweet(tweets) {
     createTweetView(tweets[i]);
   }
 }
-
-defaultTweet(lodedTweets);
 
   document.querySelector('#tweet-btn').addEventListener('click',() => {
     document.querySelector('#modal').setAttribute("data-open",true);
@@ -36,4 +31,3 @@ defaultTweet(lodedTweets);
     document.querySelector('#modal').removeAttribute("data-open");
   });
 
-  

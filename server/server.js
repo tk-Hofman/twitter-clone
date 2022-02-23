@@ -12,12 +12,13 @@
 
   const http = require('http');
   const server = http.createServer((req,res) => {
+
     db.all('SELECT * FROM tweets', (err, rows) =>{
       if (err) {
           console.log(err);
           return;
       }
-    res.writeHead(200, {'Content-Type' :'application/json'});
+    res.writeHead(200, {'Content-Type':'application/json','Access-Control-Allow-Origin': '*'});
     res.end(JSON.stringify(rows),'utf-8');
     });
   });
