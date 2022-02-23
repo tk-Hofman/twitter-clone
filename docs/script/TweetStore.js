@@ -1,11 +1,13 @@
-const tweetMessages = [
-  {message: "こんにちは", like: 2, id: "yosino"},
-  {message: "こんばんわ", like: 90, id: "toki"},
-  {message: "おはよう", like: 55, id: "jyo"},
-  {message: "さよなら", like: 30, id: "tbris"},
-  {message: "いただきます", like: 49, id: "oosaka"},
-  {message: "ご馳走様です", like: 31, id: "javascript"}
-];
+let tweetMessages = [];
+
+export async function loadTweets() {
+  const url = 'http://localhost:4000/';
+  const response = await fetch(url,{
+    method: 'GET'
+  })
+  tweetMessages = await response.json(); 
+  changeHandler();
+}
 
 export function addMessage(message) {
   // tweetMessagesの末尾に他のオブジェクトと同じ形式で追加する
@@ -14,7 +16,7 @@ export function addMessage(message) {
   changeHandler();
 }
 
-export function loadTweets() {
+export function getTweets() {
   return tweetMessages;
 }
 
