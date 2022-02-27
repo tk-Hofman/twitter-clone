@@ -2,6 +2,7 @@
 import { createTweetView } from './script/createTweetView.js'
 import { getTweets, onChange, addMessage, loadTweets } from './script/TweetStore.js'
 
+
 function reDrawTweets() {
   defaultTweet(getTweets());
 }
@@ -30,4 +31,5 @@ function defaultTweet(tweets) {
   document.querySelector('#modal-back').addEventListener('click',() => {
     document.querySelector('#modal').removeAttribute("data-open");
   });
+
 
