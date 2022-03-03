@@ -9,7 +9,7 @@ export const MessageRepository: Repository<Tweet> = {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(res);
+                    resolve(res.map((d) => Tweet.fromDB(d)));
                 }
             });
         });
@@ -37,7 +37,7 @@ export const MessageRepository: Repository<Tweet> = {
                 if (err) {
                     reject(err);
                 } else {
-                    resolve(row);
+                    resolve(Tweet.fromDB(row));
                 }
             });
         });
