@@ -24,7 +24,6 @@ export const Tweet = {
     },
 
     toDB(item: Partial<Tweet>): string {
-        console.log('toDB', item);
         const result = [];
         if (hasValue(item.like)) {
             result.push(`like=${item.like}`);

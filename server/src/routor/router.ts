@@ -36,7 +36,6 @@ export class Router {
             req.on('data', (chunk) => {
                 data = JSON.parse(chunk);
             }).on('end', () => {
-                console.log(req.url, req.method, data);
                 const { url: _url, method } = req;
 
                 if (!_url || !method || ['get', 'post', 'put', 'delete'].indexOf(method.toLowerCase()) === -1) {
@@ -89,7 +88,6 @@ export class Router {
                             },
                         );
                     } catch (e) {
-                        console.log('error', e);
                         res.writeHead(500, head);
                         res.end(String(e));
                     }
@@ -106,10 +104,8 @@ export class Router {
 function matchRoute(path: string, toPath: string): { path: string; params: Record<string, string> } | null {
     const pathSplit = path.split('/');
     const toPathSplit = toPath.split('/');
-    console.log(pathSplit, toPathSplit);
     const params = toPathSplit.reduce((accum, toPathName, index) => {
         const pathName = pathSplit[index];
-        console.log('解析', accum, pathName, toPathSplit[index], index);
         if (!accum) return null;
         if (pathName.startsWith(':')) {
             accum[pathName.slice(1)] = toPathSplit[index];

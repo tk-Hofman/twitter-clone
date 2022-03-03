@@ -57,11 +57,9 @@ export const MessageRepository: Repository<Tweet> = {
 
     update(id: string, item: Partial<Tweet>): Promise<Tweet | null> {
         const sets = Tweet.toDB(item);
-        console.log(`UPDATE tweets SET ${sets} where id=${id};`);
         return new Promise<Tweet | null>((resolve, reject) => {
             _db.run(`UPDATE tweets SET ${sets} where id=${id};`, async function (err) {
                 if (err) {
-                    console.log('eeeee', err);
                     reject(err);
                 } else {
                     const result = await MessageRepository.findById(id);

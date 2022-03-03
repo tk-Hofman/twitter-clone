@@ -8,7 +8,6 @@ router.addRoute('/message/:messageId', {
     async get(res, { query, params }) {
         const { messageId } = params;
         if (validateString(messageId, { min: 1 })) {
-            console.log('kita', messageId);
             const result = await MessageRepository.findById(messageId);
             if (!result) {
                 res.fail(404);
