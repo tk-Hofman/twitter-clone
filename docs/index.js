@@ -1,6 +1,7 @@
 'use strict';
 import { createTweetView } from './script/createTweetView.js'
-import { getTweets, onChange, addMessage, loadTweets } from './script/TweetStore.js'
+import { getTweets, onChange, addMessage, loadTweets, } from './script/TweetStore.js'
+
 
 function reDrawTweets() {
   defaultTweet(getTweets());
@@ -22,7 +23,7 @@ function defaultTweet(tweets) {
   });
 
   document.querySelector('.new-tweet-send-btn').addEventListener('click',() => {
-    const tweetText =  document.getElementById('tweet-input').value;
+    let tweetText =  document.getElementById('tweet-input').value;
     document.querySelector('#modal').removeAttribute("data-open");
     addMessage(tweetText);
   });
@@ -30,4 +31,5 @@ function defaultTweet(tweets) {
   document.querySelector('#modal-back').addEventListener('click',() => {
     document.querySelector('#modal').removeAttribute("data-open");
   });
+
 

@@ -14,7 +14,8 @@ export function createTweetView (tweetData) {
     var tweetBoxRight = document.createElement('div');
     var tweetName = document.createElement('h3');
     var checkImg = document.createElement('img');
-    var tweetAaccountDate = document.createElement('div');
+    var tweetId = document.createElement('div');
+    var tweetTime = document.createElement('div')
     var tweetMenu = document.createElement('img');
     var tweetContent = document.createElement('div');
     var tweetBottomBlckReply = document.createElement('div');
@@ -40,7 +41,8 @@ export function createTweetView (tweetData) {
     tweetName.setAttribute("class","tweet-name");
     checkImg.setAttribute("class","official-mark");
     checkImg.setAttribute("src","img/ck.png");
-    tweetAaccountDate.setAttribute("class","tweet-account-date");
+    tweetId.setAttribute("class","tweet-id");
+    tweetTime.setAttribute("class","tweet-time");
     tweetMenu.setAttribute("class","tweet-menu-data");
     tweetMenu.setAttribute("src","img/ten.png");
     tweetContent.setAttribute("class","tweet-content");
@@ -63,10 +65,11 @@ export function createTweetView (tweetData) {
     var tweetMonth = tweetNow.getMonth()+1;
     var tweetDate = tweetNow.getDate();
 
-    tweetName.textContent = "Twetter"
-    tweetAaccountDate.textContent = `@Twetter・${tweetMonth}月${tweetDate}日`
-    replyNumber.textContent = "0" 
-    rtNumber.textContent = "0"
+    tweetName.textContent = "Twetter";
+    tweetId.textContent = 'Twitter';
+    tweetTime.textContent = `・${tweetMonth}月${tweetDate}日`;
+    replyNumber.textContent = "0" ;
+    rtNumber.textContent = "0";
     likeNumber.textContent = tweetData.like;
     tweetContent.textContent = tweetData.message;
     
@@ -76,7 +79,8 @@ export function createTweetView (tweetData) {
     tweetBoxRight.appendChild(tweetDetail);
     tweetDetail.appendChild(tweetName);
     tweetDetail.appendChild(checkImg);
-    tweetDetail.appendChild(tweetAaccountDate);
+    tweetDetail.appendChild(tweetId);
+    tweetDetail.appendChild(tweetTime);
     tweetDetail.appendChild(tweetMenu);
     tweetBoxRight.appendChild(tweetContent);
     tweetBoxRight.appendChild(tweetBottom);
