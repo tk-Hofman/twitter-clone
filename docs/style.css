@@ -486,7 +486,18 @@ h1 .official-mark{
   letter-spacing: 0.05em;
 }
 
-.tweet-account-date {
+.tweet-id {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #6E767D;
+  margin-left: 3px;
+  margin-top: 5px;
+}
+
+.tweet-time {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -494,7 +505,6 @@ h1 .official-mark{
   line-height: 16px;
   letter-spacing: -0.05em;
   color: #6E767D;
-  margin-left: 3px;
   margin-top: 5px;
 }
 
