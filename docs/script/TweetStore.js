@@ -1,5 +1,5 @@
 let tweetMessages = [];
-const url = 'http://localhost:4000/message';
+const url = "http://localhost:4000/message"
 
 export async function loadTweets() {
   const response = await fetch(url,{
@@ -11,16 +11,16 @@ export async function loadTweets() {
 
 export async function addMessage(content) {
   // tweetMessagesの末尾に他のオブジェクトと同じ形式で追加する
+  const newTweetContent = ({message: content.message, like: 0, userId: content.userId});
   const method = 'POST';
+  const body =  JSON.stringify(newTweetContent);
   const headers = {
     'Accept' : 'application/json',
     'Content-Type': 'application/json'
   };
-  let newTweetContent = ({message: content.message, like: 0, userId: content.userId});
-  console.log("http://localhost:4000/message", {method, headers, body})
   const response = await fetch("http://localhost:4000/message", {method, headers, body});
-  newTweetContent = await response.json();
-  tweetMessages.push(newTweetContent);
+  const responseNewTweetContent = await response.json();
+  tweetMessages.push(responseNewTweetContent);
   changeHandler();
 }
 

@@ -1,8 +1,11 @@
+  const {setDb} = require("./infra/db")
+  setDb("./twitter.db");
+  const {getAllTweet} = require("./infra/getAllTweet");
   const sqlite3 = require('sqlite3').verbose();
   const db = new sqlite3.Database('./twitter.db');
   const http = require('http'); 
   let newId = "";
-  const server = http.createServer((req,res) => {
+  const server = http.createServer(async (req,res) => {
     if(req.url === '/message') {
       if(req.method === 'POST') {
         let newMessage = '';
@@ -11,13 +14,14 @@
         })
         .on('end',function() {
           const newTweetMessage = JSON.parse(newMessage);
-          db.run("insert into tweets(message,like,user_id) values(?,?,?)", [newTweetMessage.message,0,newTweetMessage.userId],function(err) {
-            if (db.get(`SELECT * FROM tweets where message=null or user_id=null`)) {
-              res.writeHead(400, {'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
-              const errMessage = "メッセージまたはUSER IDを入力してください"
-              res.end((errMessage));
-            }
-            else if (err) {
+          if (newTweetMessage.user_id === undefined || newTweetMessage.message === undefined ) {
+            res.writeHead(400, {'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
+            const errMessage = "メッセージまたはUSER IDを入力してください"
+            res.end((errMessage));
+          }
+          db.run("insert into tweets(message,like,user_id,created_at) values (?,?,?,strftime('%s', 'now'))", [newTweetMessage.message,0,newTweetMessage.user_id],function(err)
+           {
+            if (err) {
               return console.log(err);
             }
             newId = this.lastID;
@@ -28,7 +32,14 @@
                 return res.end(responseBody,'utf-8');
               } 
               else {
-                const responseBody = JSON.stringify(rows)
+                const responseData = {
+                  id: rows.id,
+                  message: rows.message,
+                  like: rows.like,
+                  createdAt: rows.created_at,
+                  userId: rows.user_id
+                };
+                const responseBody = JSON.stringify(responseData)
                 res.writeHead(200,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
                 res.end(responseBody,'utf-8');
               }
@@ -36,17 +47,17 @@
           });     
         })
       } else if (req.method === 'GET') {
-        db.all('SELECT * FROM tweets', (err, rows) =>{
-          if (err) {
-            const responseBody = JSON.stringify(err);
-            res.writeHead(500, {'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
-            return res.end(responseBody,'utf-8');
-          }  else {
-              const responseBody = JSON.stringify(rows)
-              res.writeHead(200,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
-              res.end(responseBody,'utf-8');
-            }
-        });
+        try {
+          const responseTweets = await getAllTweet(); 
+          const responseBody = JSON.stringify(responseTweets)
+          res.writeHead(200,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
+          res.end(responseBody,'utf-8');
+        }
+        catch (err) {
+          const responseBody = JSON.stringify(err);
+          res.writeHead(500, {'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
+          return res.end(responseBody,'utf-8');
+        }
       }
     }  else {
         let getAccessUrlSplit = req.url.split("/");
@@ -57,27 +68,46 @@
               res.writeHead(500, {'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
               return res.end(responseBody,'utf-8');
             } 
-            else if (db.get(`SELECT * FROM tweets where id=null`)) {
+            else if (rows === undefined) {
               res.writeHead(404,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
               res.end();
             }
             else {
-              const responseBody = JSON.stringify(rows)
+              const responseData = {
+                id: rows.id,
+                message: rows.message,
+                like: rows.like,
+                createdAt: rows.created_at,
+                userId: rows.user_id
+              };
+              const responseBody = JSON.stringify(responseData)
               res.writeHead(200,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
               res.end(responseBody,'utf-8');
             }
           });
         } else if (req.method === 'DELETE') {
-          db.run(`delete from tweets where id=${getAccessUrlSplit[2]}`, (err) => {
+            if (getAccessUrlSplit[2] === undefined) {
+              res.writeHead(400,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
+              const errMessage = "リクエストにツイートIDが存在しません"
+              res.end(errMessage);
+              return
+            }
+          db.run(`delete from tweets where id=${getAccessUrlSplit[2]}`, function (err)  {
             if (err) {
               console.log(err);
+              return
             } 
-            else if (db.get(`SELECT * FROM tweets where id=null`)) {
-              res.writeHead(404,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
-              res.end();
+            else if (this.changes === 0) {
+              res.writeHead(404, {'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
+              const errMessage = "ツイートが見つかりません";
+              res.end(errMessage);
+              return
             }
             else {
-              const responseBody = getAccessUrlSplit[2]
+              const responseId = {
+                id:  getAccessUrlSplit[2]
+              };
+              const responseBody = JSON.stringify(responseId);
               res.writeHead(200, {'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
               res.end(responseBody,'utf-8');
             }
@@ -89,21 +119,36 @@
             })
             .on('end',function() {
               const newTweetMessage = JSON.parse(newMessage);
-              db.run(`UPDATE tweets SET message = ? WHERE id=${getAccessUrlSplit[2]}`,[newTweetMessage.message], function(err) {
-                if (db.get(`SELECT * FROM tweets where message=null and user_id=null`)) {
-                  res.writeHead(400,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
-                  const errMessage = 'メッセージとUSER IDを入力してください';
-                  res.end(errMessage);
-                }
-                else if (err) {
+              if (getAccessUrlSplit[2] === undefined) {
+                res.writeHead(400,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
+                const errMessage = 'tweet IDが見つかりません';
+                res.end(errMessage);
+                return
+              }
+              else if (newTweetMessage.message === undefined && newTweetMessage.userId ===undefined) { 
+                res.writeHead(400,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
+                const errMessage = 'メッセージとUSER IDを入力してください';
+                res.end(errMessage);
+                return
+              }
+              db.run(`UPDATE tweets SET message = ? WHERE id=${getAccessUrlSplit[2]}`,[newTweetMessage.message], function(err,rows) {
+                if (err) {
                   console.log(err);
-                } 
-                else if (db.get(`SELECT * FROM tweets where id=null`)) {
-                  res.writeHead(404,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
+                  res.writeHead(500, {'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
                   res.end();
+                  return
+                } 
+                else if (this.changes === 0) {
+                  res.writeHead(404, {'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*',"Vary": "Accept-Encoding"});
+                  const errMessage = "ツイートが見つかりません";
+                  res.end(errMessage);
+                  return
                 }
                 else {
-                  const responseBody = newMessage;
+                  const responsePutMessage = {
+                    message: newTweetMessage.message
+                  };
+                  const responseBody = JSON.stringify(responsePutMessage);
                   res.writeHead(200, {'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
                   res.end(responseBody,'utf-8');
                 }
@@ -112,4 +157,5 @@
           }
      } 
   });
+  module.exports = server;
   server.listen(4000);
