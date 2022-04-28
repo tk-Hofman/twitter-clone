@@ -3,8 +3,9 @@ const {setDb,setUp} = require('./db');
 const {addTweet} = require('./addTweet');
 describe("getAllTweet",() => {
   beforeEach (async () => {
-    await setUp("./test.db");
-    setDb("./test.db");
+    await setUp("./getAllTest.db");
+    setDb("./getAllTest.db");
+    console.log("セットアップ完了のはず");
   })
   test("0件のtweetを取得",async () => {
     const tweets = await getAllTweet();

@@ -1,0 +1,15 @@
+{ 
+  "compilerOptions" : { 
+    "lib" : [ "es2015" ], 
+    "module" : "commonjs" , 
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {"@/*":["./src/*"]},
+    "outDir" : "dist" , 
+    "sourceMap" : true , 
+    "strict" : true , 
+    "target" : "es2015" ,
+    "types": ["@types/node", "@types/jest"]
+  }
+}

@@ -1,6 +1,7 @@
   const {setDb} = require("./infra/db")
   setDb("./twitter.db");
   const {getAllTweet} = require("./infra/getAllTweet");
+  const {getTweet} = require("./infra/getTweet")
   const sqlite3 = require('sqlite3').verbose();
   const db = new sqlite3.Database('./twitter.db');
   const http = require('http'); 
@@ -35,7 +36,7 @@
                 const responseData = {
                   id: rows.id,
                   message: rows.message,
-                  like: rows.like,
+                  like: rows.like, 
                   createdAt: rows.created_at,
                   userId: rows.user_id
                 };
