@@ -61,15 +61,13 @@ export function createTweetView (tweetData) {
     share.setAttribute("class","share");
     share.setAttribute("src","img/ue.png");
 
-    var tweetNow = new Date();
-    var tweetMonth = tweetNow.getMonth()+1;
-    var tweetDate = tweetNow.getDate();
+    const  dateTime = new Date(tweetData.createdAt * 1000);
 
-    tweetName.textContent = "Twetter";
-    tweetId.textContent = 'Twitter';
-    tweetTime.textContent = `・${tweetMonth}月${tweetDate}日`;
-    replyNumber.textContent = "0" ;
-    rtNumber.textContent = "0";
+    tweetName.textContent = "Tweetr";
+    tweetId.textContent = `@${tweetData.userId}・`;
+    tweetTime.textContent = dateTime.toLocaleDateString();
+    replyNumber.textContent = 0 ;
+    rtNumber.textContent = 0 ;
     likeNumber.textContent = tweetData.like;
     tweetContent.textContent = tweetData.message;
     

@@ -23,7 +23,7 @@ function defaultTweet(tweets) {
   });
 
   document.querySelector('.new-tweet-send-btn').addEventListener('click',() => {
-    let tweetText =  document.getElementById('tweet-input').value;
+    const tweetText =  document.getElementById('tweet-input').value;
     document.querySelector('#modal').removeAttribute("data-open");
     addMessage(tweetText);
   });

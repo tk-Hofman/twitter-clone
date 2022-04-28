@@ -4,13 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node src/server.js",
-    "setup":"node src/setup.js"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "dev": "node js/server.js",
+    "setup": "node js/setup.js",
+    "ts-dev": "ts-node-dev --respawn src/main.ts"
   },
   "author": "Toki Yoshino",
   "license": "MIT",
   "dependencies": {
     "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.24",
+    "jest": "^27",
+    "ts-jest": "^27.1.4",
+    "ts-lint": "^4.5.1",
+    "ts-node": "^10.7.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.3"
   }
 }
