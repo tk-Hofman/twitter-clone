@@ -1,12 +1,21 @@
-const map: Record<string,string> = {
-  koko: "hello",
-  jeje: "こんばんわ",
-  nana: "おはよう",
-  wowo: "おやすみ"
+type TweetDataObj = {
+  id: string
+  message: string
+  like: number
+  createdAt: Date
+  userId: string
 }
 
-export async function getTweet(id: string): Promise<string | null> {
+const map: Record<string, TweetDataObj> = {
+  kokoko: {
+    id: "kokoko",
+    message: "hello",
+    like: 0,
+    createdAt: new Date(),
+    userId: "tokitoki"
+  }
+}
+
+export async function getTweet(id: string): Promise<TweetDataObj | null> {
   return  Promise.resolve(map[id] || null)
 }
-
-getTweet("wowo")
