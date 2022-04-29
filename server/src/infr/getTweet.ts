@@ -18,6 +18,12 @@ const map: Record<string, TweetDataObj> = {
   }
 }
 
-export async function getTweet(id: string): Promise<TweetDataObj | null> {
+export async function getTweet(id: string, message?: string): Promise<TweetDataObj | null> {
+  if(message) {
+    map[id]["message"] = message;
+    return Promise.resolve(map[id] || null)
+  }
   return  Promise.resolve(map[id] || null)
 }
+
+
