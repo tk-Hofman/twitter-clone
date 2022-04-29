@@ -1,7 +1,4 @@
 import {getTweet} from "./getTweet"
-import {addTweet} from "./addTweet"
-
-
 describe("getTweet", () => {
   test("tweeetを取得", async () => {
     const sendMessage =[];
