@@ -1,17 +1,19 @@
 type TweetDataObj = {
-  id: string
-  message: string
-  like: number
-  createdAt: Date
-  userId: string
+  id: string;
+  message: string;
+  like: number;
+  //createdAt: string;
+  userId: string;
 }
+
+const date = new Date
 
 const map: Record<string, TweetDataObj> = {
   kokoko: {
     id: "kokoko",
     message: "hello",
     like: 0,
-    createdAt: new Date(),
+    //createdAt: date.toLocaleString(),
     userId: "tokitoki"
   }
 }

@@ -2,14 +2,14 @@ import {getTweet} from "./getTweet"
 
 describe("getTweet", () => {
   test("成功するパターン", async () => {
-    const resultWowo = await getTweet("wowo") 
-    expect(resultWowo).toEqual("おやすみ")
-    const resultKoko = await getTweet("koko") 
-    expect(resultKoko).toEqual("hello")
-    const resultNana = await getTweet("nana") 
-    expect(resultNana).toEqual("おはよう")
-    const resultJeje = await getTweet("jeje") 
-    expect(resultJeje).toEqual("こんばんわ")
+    const resultData = await getTweet("kokoko") 
+    expect(resultData).toEqual({
+      id: "kokoko",
+      message: "hello",
+      like: 0,
+      //createdAt: date.toLocaleString(),
+      userId: "tokitoki"
+    })
   })
   test("IDが見つからないパターン", async () => {
     const resultWowo = await getTweet("aaaa") 
