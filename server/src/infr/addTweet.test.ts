@@ -10,17 +10,17 @@ type DataType = {
 
 describe("addTweet", () => {
   test("ツイートを投稿", async () => {
-    const idAndMessage =  await addTweet("kokoko","ここ")
+    const idAndMessage =  await addTweet("7","ここ")
     const message = await getTweet(idAndMessage[0],idAndMessage[1])
     const anwserData: DataType = {
-      id: "",
-      message: "",
+      id: idAndMessage[0],
+      message: idAndMessage[1],
       like: 0,
       //createdAt: date.toLocaleString(),
       userId: "tokitoki"
     }
-    anwserData.id = idAndMessage[0]
-    anwserData.message = idAndMessage[1]
     expect(message).toEqual(anwserData)
   })
 })
+
+
