@@ -10,7 +10,6 @@ module.exports = {
   ],
   coverageDirectory: 'coverage_dir',
   coverageReporters: ["html"],
-  
   "testMatch": [
     "**/?(*.)+(spec|test).+(ts|tsx|js)"
   ],
