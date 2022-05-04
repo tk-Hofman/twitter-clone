@@ -1,18 +1,10 @@
 import { deleteTweet } from "./deleteTweet";
 
-type TweetDataObj = {
-  id: string;
-  message: string;
-  like: number;
-  //createdAt: string;
-  userId: string;
-}
 
 describe("deleteTweet", () => {
-  test("ツイートを削除", async () => {
-    const id = "1"
-    const remove = await deleteTweet("1")
-    expect(deleteTweet("1")).toEqual({
+  test("1件目のツイートを削除", async () => {
+    const removeData = await deleteTweet("1")
+    expect(removeData).toEqual({
       2: {
         id: "2",
         message: "world",
@@ -28,5 +20,22 @@ describe("deleteTweet", () => {
         userId: "tokitoki"
       }
     })
+  })
+
+  test("2件目のツイートを削除", async () => {
+    const removeData = await deleteTweet("2")
+    expect(removeData).toEqual({
+      3: {
+        id: "3",
+        message: "japan",
+        like: 0,
+        //createdAt: date.toLocaleString(),
+        userId: "tokitoki"
+      }
+    })
+  })
+  test("IDが見つからないパターン", async () => {
+    const removeData = await deleteTweet("aaaa") 
+    expect(removeData).toEqual(null)
   })
 })

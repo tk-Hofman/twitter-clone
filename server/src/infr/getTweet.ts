@@ -32,23 +32,11 @@ const map: Record<string, TweetDataObj> = {
   }
 }
 
-export async function getTweet(catchId: string, catchMessage?: string): Promise<TweetDataObj | null> {
-  if(catchMessage) {
-    if(typeof Object.keys(map) === catchId) {
-      map[catchId]["message"] = catchMessage;
-      return Promise.resolve(map[catchId] || null)
-    } else {
-      map[catchId] = {
-        id: catchId,
-        message: catchMessage,
-        like: 0,
-        //createdAt: date.toLocaleString(),
-        userId: "tokitoki"
-      }
-      return Promise.resolve(map[catchId] || null)
-    }
-  } else 
-  return  Promise.resolve(map[catchId] || null)
+export async function getTweet(catchId: string): Promise<TweetDataObj | null> {
+  if(map[catchId]) {
+    return Promise.resolve(map[catchId])
+  } 
+  return Promise.resolve(null)
 }
 
 

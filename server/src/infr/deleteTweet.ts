@@ -33,7 +33,7 @@ const map: Record<string, TweetDataObj> = {
 }
 
 export async function deleteTweet(id: string): Promise<Record<string, TweetDataObj> | null> {
-  if(typeof Object.keys(map) === id) {
+  if(map[id]) {
     delete map[id];
     return Promise.resolve(map);
   }

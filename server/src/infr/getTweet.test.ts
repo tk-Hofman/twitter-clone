@@ -49,8 +49,8 @@ describe("getTweet", () => {
   });
 
   test("IDが見つからないパターン", async () => {
-    const resultWowo = await getTweet("aaaa") 
-    expect(resultWowo).toEqual(null)
+    const resultData = await getTweet("aaaa") 
+    expect(resultData).toEqual(null)
   })
 })
 
