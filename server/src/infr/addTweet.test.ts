@@ -4,18 +4,20 @@ type DataType = {
   id: string
   message: string
   like: number
-  //createdAt: date.toLocaleString(),
+  createdAt: string,
   userId: string
 };
+
+const date = new Date
 
 describe("addTweet", () => {
   test("ツイートを投稿", async () => {
     const idAndMessage: DataType =  await addTweet("yoshino","こんにちは")
     expect(idAndMessage).toEqual({
-        id: "2",
-        message: "こんにちは",
+        id: "4",
+        message: "こんにちは", 
         like: 0,
-        //createdAt: date.toLocaleString(),
+        createdAt: date.toLocaleString(),
         userId: "yoshino"
     })
   })
