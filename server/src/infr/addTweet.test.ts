@@ -1,5 +1,4 @@
 import { addTweet } from "./addTweet"
-import { getTweet } from "./getTweet"
 type DataType = {
   id: string
   message: string

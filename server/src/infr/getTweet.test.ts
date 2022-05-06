@@ -1,6 +1,7 @@
 import {getTweet} from "./getTweet"
 import {addTweet} from "./addTweet"
 import {deleteTweet} from "./deleteTweet"
+import {tweetData} from "./tweetData";
 type TweetData = {
   id: string,
   message: string,
@@ -56,6 +57,7 @@ describe("getTweet", () => {
 
   test("addTweetで投稿した内容を取得", async () => {
     const tweetId: string = "4";
+    await addTweet("YoshinoToki", "ときです")
     expect(await getTweet(tweetId)).toEqual(await addTweet("YoshinoToki", "ときです"))
   })
 
