@@ -1,4 +1,4 @@
-import {tweetData} from "./tweetData"
+import map = require("./tweetData");
 
 type TweetDataObj = {
   id: string;
@@ -8,9 +8,8 @@ type TweetDataObj = {
   userId: string;
 }
 
-const map: Record<string, TweetDataObj>  = tweetData()
 
-export async function getTweetAll():Promise<any> {
+export async function getTweetAll():Promise<Record<string, TweetDataObj>> {
   return Promise.resolve(map);
 }
 

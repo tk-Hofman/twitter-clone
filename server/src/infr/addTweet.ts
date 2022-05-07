@@ -1,4 +1,4 @@
-import {tweetData} from "./tweetData";
+import map = require("./tweetData");
 
 type TweetDataObj = {
   id: string;
@@ -8,7 +8,7 @@ type TweetDataObj = {
   userId: string;
 }
 
-const map: Record<string, TweetDataObj>  = tweetData()
+
 const date = new Date
 
 export async function addTweet (userId: string, message: string): Promise<TweetDataObj>{
