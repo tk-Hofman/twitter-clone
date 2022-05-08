@@ -1,4 +1,4 @@
-import map = require("./tweetData");
+import map from './tweetData'
 
 type TweetDataObj = {
   id: string;
@@ -12,8 +12,8 @@ type TweetDataObj = {
 const date = new Date
 
 export async function addTweet (userId: string, message: string): Promise<TweetDataObj>{
-  const  id = String(Object.keys(map).length + 1)
-      const resultMap = map[String(Object.keys(map).length + 1)] = {
+  const id = String(Object.keys(map).length + 1)
+      const resultMap = map[id] = {
         id: id,
         message: message,
         like: 0,

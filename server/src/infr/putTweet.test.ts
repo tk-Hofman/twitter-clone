@@ -16,6 +16,6 @@ describe('putTweet', () => {
 
   test('存在しないidを送信', async () => {
     const put = await putTweet("8", "更新")
-    expect(put).toEqual(console.log("正しいidを入力してください"))
+    expect(put).toEqual(null)
   })
 })

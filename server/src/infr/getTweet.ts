@@ -1,4 +1,4 @@
-import map = require("./tweetData");
+import map from './tweetData'
 
 type TweetDataObj = {
   id: string;
@@ -8,7 +8,6 @@ type TweetDataObj = {
   userId: string;
 }
 
-const date = new Date
 
 export async function getTweet(catchId: string): Promise<TweetDataObj | null> {
   if(map[catchId]) {

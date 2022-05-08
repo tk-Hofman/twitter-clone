@@ -1,4 +1,4 @@
-import map = require("./tweetData");
+import map from './tweetData'
 
 type TweetDataObj = {
   id: string;
