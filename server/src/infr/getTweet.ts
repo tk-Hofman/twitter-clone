@@ -16,4 +16,5 @@ export async function getTweet(catchId: string): Promise<TweetDataObj | null> {
   return Promise.resolve(null)
 }
  
+exports.getTweet = getTweet;
 

@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
+
+  
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "dev": "node js/server.js",
+    "dev": "node js/server.ts",
     "setup": "node js/setup.js",
     "ts-dev": "ts-node-dev --respawn src/main.ts"
   },

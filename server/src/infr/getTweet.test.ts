@@ -1,7 +1,7 @@
 import {getTweet} from "./getTweet"
 import {addTweet} from "./addTweet"
 import {deleteTweet} from "./deleteTweet"
-import map = require("./tweetData");
+
 type TweetData = {
   id: string,
   message: string,
@@ -10,7 +10,7 @@ type TweetData = {
   userId: string
 }
 
-const date = new Date
+const date = new Date;
 
 describe("getTweet", () => {
   test("1件目のツイートを取得", async () => {
