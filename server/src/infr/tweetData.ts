@@ -6,6 +6,7 @@ type TweetDataObj = {
   userId: string;
 }
 
+
 const date = new Date
 
 const map: Record<string,TweetDataObj> = {
@@ -32,4 +33,5 @@ const map: Record<string,TweetDataObj> = {
   }
 }
 
-export = map;
+export { TweetDataObj, map };
+

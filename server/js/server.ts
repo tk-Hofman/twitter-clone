@@ -7,7 +7,6 @@ const server:any =  http.createServer(async (req:any,res: any) => {
   if(req.method === 'GET') {
     const responseTweets = await getTweetAll();
     const responseBody = JSON.stringify(responseTweets)
-    res.writeHead(200,{'Content-Type':'application/json; charset=UTF-8','Access-Control-Allow-Origin': '*','Content-Length': Buffer.byteLength(responseBody),"Vary": "Accept-Encoding"});
     res.end(responseBody,'utf-8');
   }
 })

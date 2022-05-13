@@ -1,13 +1,4 @@
-import map from './tweetData'
-
-type TweetDataObj = {
-  id: string;
-  message: string;
-  like: number;
-  createdAt: string;
-  userId: string;
-}
-
+import { map, TweetDataObj } from './tweetData'
 
 const date = new Date
 

@@ -16,6 +16,6 @@ describe("deleteTweet", () => {
   })
   test("IDが見つからないパターン", async () => {
     const removeData = await deleteTweet("aaaa") 
-    expect(removeData).toEqual(null)
+    expect(removeData).toEqual(undefined)
   })
 })

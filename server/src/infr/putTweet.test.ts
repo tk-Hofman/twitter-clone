@@ -15,7 +15,12 @@ describe('putTweet', () => {
   })
 
   test('存在しないidを送信', async () => {
-    const put = await putTweet("8", "更新")
-    expect(put).toEqual(null)
+    try {
+     putTweet('aaa', 'エラー出ると思う')
+    } 
+    catch(e: any) {
+      (e.message)
+    }
+    expect(putTweet('aaa', 'エラー出ると思う')).toEqual(new Error("idのデータが見つかりません"))
   })
 })
