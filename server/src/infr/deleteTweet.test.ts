@@ -15,7 +15,13 @@ describe("deleteTweet", () => {
   })
 
   test("IDが見つからないパターン", async () => {
-    const removeData = await deleteTweet("aaaa") 
-    expect(removeData).toEqual(new Error("idのデータが見つかりません"))
+    try {
+      deleteTweet("50")
+     } 
+     catch(e: any) {
+       (e.message)
+       console.log("ここ",e.message)
+     }
+    expect(deleteTweet("50")).toEqual(new Error("idのデータが見つかりません"))
   })
 })
