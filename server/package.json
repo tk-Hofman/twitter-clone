@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "dev": "node js/server.ts",
+    "dev": "node src/server.ts",
     "setup": "node js/setup.js",
     "ts-dev": "ts-node-dev --respawn src/main.ts"
   },
