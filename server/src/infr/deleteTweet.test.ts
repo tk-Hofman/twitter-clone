@@ -15,13 +15,12 @@ describe("deleteTweet", () => {
   })
 
   test("IDが見つからないパターン", async () => {
+    expect.assertions(1);
     try {
-      deleteTweet("50")
-     } 
-     catch(e: any) {
-       (e.message)
-       console.log("ここ",e.message)
-     }
-    expect(deleteTweet("50")).toEqual(new Error("idのデータが見つかりません"))
+      await deleteTweet("999")
+    }
+    catch (e:any) {
+      expect(e.message).toMatch("idのデータが見つかりません")
+    }
   })
 })

@@ -1,14 +1,8 @@
 import {getTweet} from "./getTweet"
 import {addTweet} from "./addTweet"
 import {deleteTweet} from "./deleteTweet"
-
-type TweetData = {
-  id: string,
-  message: string,
-  like: number,
-  createdAt: string,
-  userId: string
-}
+import {TweetDataObj, map } from "./tweetData"
+import {numberChange} from "./numberChange"
 
 const date = new Date;
 
@@ -16,48 +10,31 @@ describe("getTweet", () => {
   test("1件目のツイートを取得", async () => {
     const tweetId: string = "1";
     const resultData = await getTweet(tweetId) 
-    const anwserData: TweetData = {
-      id: tweetId,
-      message: "hello",
-      like: 0,
-      createdAt: date.toLocaleString(), 
-      userId: "tokitoki"
-    }
-    anwserData.id = tweetId;
+    const anwserData: TweetDataObj = map[tweetId]
     expect(resultData).toEqual(anwserData)
   });
 
   test("2件目のツイートを取得", async () => {
     const tweetId: string = "2";
-    const resultData = await getTweet(tweetId) 
-    const anwserData: TweetData = {
-      id: tweetId,
-      message: "world",
-      like: 0,
-      createdAt: date.toLocaleString(),
-      userId: "tokitoki"
-    }
-    anwserData.id = tweetId;
+    const resultData: TweetDataObj | null = await getTweet(tweetId) 
+    const anwserData: TweetDataObj = map[tweetId]
     expect(resultData).toEqual(anwserData)
   });
-
   test("3件目のツイートを取得", async () => {
     const tweetId: string = "3";
-    const resultData = await getTweet(tweetId) 
-    const anwserData: TweetData = {
-      id: tweetId,
-      message: "japan",
-      like: 0,
-      createdAt: date.toLocaleString(),
-      userId: "tokitoki"
-    }
-    anwserData.id = tweetId;
+    const resultData: TweetDataObj | null = await getTweet(tweetId) 
+    const anwserData: TweetDataObj = map[tweetId]
     expect(resultData).toEqual(anwserData)
   });
 
   test("addTweetで投稿した内容を取得", async () => {
-    const tweetId: string = "4";
-    expect(await addTweet("YoshinoToki", "ときです")).toEqual(await getTweet(tweetId));
+    await addTweet("YoshinoToki", "ときです")
+    const result: TweetDataObj | null = await getTweet("4")
+    expect(result?.id).toEqual("4");
+    expect(result?.message).toEqual("ときです");
+    expect(result?.userId).toEqual("YoshinoToki");
+    const resultStringDate: any = result?.createdAt;
+    expect(true).toEqual(numberChange(resultStringDate) <= numberChange(date))
   })
 
   test("deleteTweetで削除したTweetをgetTweetしてnullを取得", async () => {

@@ -1,26 +1,27 @@
-import {putTweet} from "./putTweet"
+import { putTweet } from "./putTweet"
+import { getTweet } from "./getTweet"
+import { numberChange } from "./numberChange";
 
 const date = new Date;
 
 describe('putTweet', () => {
   test('ツイート内容を更新', async () => {
-    const put = await putTweet("3", "更新")
-    expect(put).toEqual({
-      id: "3",
-      message: "更新",
-      like: 0,
-      createdAt: date.toLocaleString(),
-      userId: "tokitoki"
-    })
+    await putTweet("3", "更新")
+    const result = await getTweet("3")
+    expect(result?.id).toEqual("3")
+    expect(result?.message).toEqual("更新")
+    expect(result?.userId).toEqual("tokitoki")
+    const resultStringDate: any = result?.createdAt;
+    expect(true).toEqual(numberChange(resultStringDate) <= numberChange(date))
   })
 
   test('存在しないidを送信', async () => {
+    expect.assertions(1);
     try {
-     putTweet('aaa', 'エラー出ると思う')
-    } 
-    catch(e: any) {
-      (e.message)
+      await putTweet("99","エラー")
     }
-    expect(putTweet('aaa', 'エラー出ると思う')).toEqual(new Error("idのデータが見つかりません"))
+    catch (e:any) {
+      expect(e.message).toMatch('idのデータが見つかりません');
+    }
   })
 })
