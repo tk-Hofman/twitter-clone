@@ -1,32 +1,26 @@
 import { deleteTweet } from "./deleteTweet";
-
-type TweetDataObj = {
-  id: string;
-  message: string;
-  like: number;
-  //createdAt: string;
-  userId: string;
-}
+import { getTweet } from "./getTweet"
 
 describe("deleteTweet", () => {
-  test("ツイートを削除", async () => {
-    const id = "1"
-    const remove = await deleteTweet("1")
-    expect(deleteTweet("1")).toEqual({
-      2: {
-        id: "2",
-        message: "world",
-        like: 0,
-        //createdAt: date.toLocaleString(),
-        userId: "tokitoki"
-      },
-      3: {
-        id: "3",
-        message: "japan",
-        like: 0,
-        //createdAt: date.toLocaleString(),
-        userId: "tokitoki"
-      }
-    })
+  test("1件目のツイートを削除", async () => {
+    await deleteTweet("1")
+    const result = await getTweet("1")
+    expect(result).toEqual(null)
+  })
+
+  test("2件目のツイートを削除", async () => {
+    await deleteTweet("2")
+    const result = await getTweet("2")
+    expect(result).toEqual(null)
+  })
+
+  test("IDが見つからないパターン", async () => {
+    expect.assertions(1);
+    try {
+      await deleteTweet("999")
+    }
+    catch (e:any) {
+      expect(e.message).toMatch("idのデータが見つかりません")
+    }
   })
 })

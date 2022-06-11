@@ -1,25 +1,18 @@
 import { addTweet } from "./addTweet"
 import { getTweet } from "./getTweet"
-type DataType = {
-  id: string
-  message: string
-  like: number
-  //createdAt: date.toLocaleString(),
-  userId: string
-};
+import { numberChange } from "./numberChange"
+
+const date = new Date
 
 describe("addTweet", () => {
   test("ツイートを投稿", async () => {
-    const idAndMessage =  await addTweet("7","ここ")
-    const message = await getTweet(idAndMessage[0],idAndMessage[1])
-    const anwserData: DataType = {
-      id: idAndMessage[0],
-      message: idAndMessage[1],
-      like: 0,
-      //createdAt: date.toLocaleString(),
-      userId: "tokitoki"
-    }
-    expect(message).toEqual(anwserData)
+    await addTweet("yoshino","こんにちは");
+    const result = await getTweet("4");
+    expect(result?.id).toEqual("4")
+    expect(result?.message).toEqual("こんにちは")
+    expect(result?.userId).toEqual("yoshino")
+    const resultStringDate: any = result?.createdAt;
+    expect(true).toEqual(numberChange(resultStringDate) <= numberChange(date))
   })
 })
 

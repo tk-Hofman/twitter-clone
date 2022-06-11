@@ -1,5 +1,17 @@
-export async function addTweet (id: string, message: string): Promise<string[]>{
-  let idAndMessageArray: string[] = [];
-  idAndMessageArray.push(id,message)
-  return Promise.resolve(idAndMessageArray)
-}
+import { map, TweetDataObj } from './tweetData'
+
+const date = new Date
+
+export async function addTweet (userId: string, message: string): Promise<TweetDataObj>{
+  const id = String(Object.keys(map).length + 1)
+      const resultMap = map[id] = {
+        id: id,
+        message: message,
+        like: 0,
+        createdAt: date.toLocaleString(),
+        userId: userId
+      }
+      return Promise.resolve(resultMap)
+  }
+
+

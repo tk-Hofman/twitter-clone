@@ -8,6 +8,7 @@
   let newId = "";
   const server = http.createServer(async (req,res) => {
     if(req.url === '/message') {
+      console.log(req.url)
       if(req.method === 'POST') {
         let newMessage = '';
         req.on('data', function(chunk) {
