@@ -1,7 +1,7 @@
 import {getTweet} from "./getTweet"
 import {addTweet} from "./addTweet"
 import {deleteTweet} from "./deleteTweet"
-import {TweetDataObj, map } from "./tweetData"
+import {TweetDataObj} from "./tweetData"
 import {numberChange} from "./numberChange"
 
 const date = new Date;
@@ -10,21 +10,33 @@ describe("getTweet", () => {
   test("1件目のツイートを取得", async () => {
     const tweetId: string = "1";
     const resultData = await getTweet(tweetId) 
-    const anwserData: TweetDataObj = map[tweetId]
-    expect(resultData).toEqual(anwserData)
+    expect(resultData?.id).toEqual("1")
+    expect(resultData?.message).toEqual("hello")
+    expect(resultData?.userId).toEqual("tokitoki")
+    const resultStringDate: any = resultData?.createdAt;
+    expect(true).toEqual(numberChange(resultStringDate) <= numberChange(date))
+
   });
 
   test("2件目のツイートを取得", async () => {
     const tweetId: string = "2";
-    const resultData: TweetDataObj | null = await getTweet(tweetId) 
-    const anwserData: TweetDataObj = map[tweetId]
-    expect(resultData).toEqual(anwserData)
+    const resultData = await getTweet(tweetId) 
+    expect(resultData?.id).toEqual("2")
+    expect(resultData?.message).toEqual("world")
+    expect(resultData?.userId).toEqual("tokitoki")
+    const resultStringDate: any = resultData?.createdAt;
+    expect(true).toEqual(numberChange(resultStringDate) <= numberChange(date))
+
   });
   test("3件目のツイートを取得", async () => {
     const tweetId: string = "3";
-    const resultData: TweetDataObj | null = await getTweet(tweetId) 
-    const anwserData: TweetDataObj = map[tweetId]
-    expect(resultData).toEqual(anwserData)
+    const resultData = await getTweet(tweetId) 
+    expect(resultData?.id).toEqual("3")
+    expect(resultData?.message).toEqual("japan")
+    expect(resultData?.userId).toEqual("tokitoki")
+    const resultStringDate: any = resultData?.createdAt;
+    expect(true).toEqual(numberChange(resultStringDate) <= numberChange(date))
+
   });
 
   test("addTweetで投稿した内容を取得", async () => {
