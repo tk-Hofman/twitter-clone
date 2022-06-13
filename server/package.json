@@ -7,9 +7,9 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
+    "dev": "node src/server.ts",
     "setup": "node js/setup.js",
-    "dev": "ts-node-dev --respawn src/server.ts",
-    "dev.js": "node js/server.js"
+    "ts-dev": "ts-node-dev --respawn src/main.ts"
   },
   "author": "Toki Yoshino",
   "license": "MIT",
