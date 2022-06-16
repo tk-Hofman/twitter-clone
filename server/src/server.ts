@@ -5,7 +5,7 @@ import { addTweet } from "./infr/addTweet"
 import { deleteTweet } from "./infr/deleteTweet"
 import { putTweet } from "./infr/putTweet"
 
-let getAccessUrlSplit: string[] = []
+let getAccessUrlSplit: string[] = [];
 const server =  createServer(async (req,res) => {
   if (req.url) {
     getAccessUrlSplit = req.url.split("/");

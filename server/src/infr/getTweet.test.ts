@@ -40,9 +40,9 @@ describe("getTweet", () => {
   });
 
   test("addTweetで投稿した内容を取得", async () => {
-    await addTweet("YoshinoToki", "ときです")
-    const result: TweetDataObj | null = await getTweet("4")
-    expect(result?.id).toEqual("4");
+    const adedId = await addTweet("YoshinoToki", "ときです")
+    const result: TweetDataObj | null = await getTweet(adedId)
+    expect(result?.id).toEqual(adedId);
     expect(result?.message).toEqual("ときです");
     expect(result?.userId).toEqual("YoshinoToki");
     const resultStringDate: any = result?.createdAt;

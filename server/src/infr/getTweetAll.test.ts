@@ -46,10 +46,11 @@ describe('getTweetAll', () => {
     expect(getAll[3].userId).toEqual("tokitoki")
     const resultStringDate3: any = getAll[3]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate3) <= numberChange(date))
-    expect(getAll[4].id).toEqual("4")
-    expect(getAll[4].message).toEqual("よろしくお願いします")
-    expect(getAll[4].userId).toEqual("tktktk")
-    const resultStringDate4: any = getAll[3]?.createdAt;
+    const adedId = await addTweet("tktktk","よろしくお願いします");
+    expect(getAll[adedId].id).toEqual(adedId)
+    expect(getAll[adedId].message).toEqual("よろしくお願いします")
+    expect(getAll[adedId].userId).toEqual("tktktk")
+    const resultStringDate4: any = getAll[adedId]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate4) <= numberChange(date))
   })
 
