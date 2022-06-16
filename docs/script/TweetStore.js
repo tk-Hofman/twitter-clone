@@ -3,11 +3,12 @@ const url = "http://localhost:4000/message"
 
 export async function loadTweets() {
   const response = await fetch(url,{
+    mode: 'no-cors',
     method: 'GET'
   })
   tweetMessages = await response.json(); 
-  changeHandler();
 }
+
 
 export async function addMessage(content) {
   // tweetMessagesの末尾に他のオブジェクトと同じ形式で追加する
