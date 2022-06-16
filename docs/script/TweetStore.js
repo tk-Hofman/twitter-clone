@@ -6,9 +6,10 @@ export async function loadTweets() {
     mode: 'no-cors',
     method: 'GET'
   })
-  tweetMessages = await response.json(); 
+  tweetMessages = response; 
+  console.log(response)
+  changeHandler();
 }
-
 
 export async function addMessage(content) {
   // tweetMessagesの末尾に他のオブジェクトと同じ形式で追加する
@@ -19,7 +20,7 @@ export async function addMessage(content) {
     'Accept' : 'application/json',
     'Content-Type': 'application/json'
   };
-  const response = await fetch("http://localhost:4000/message", {method, headers, body});
+  const response = await fetch(url, {method, headers, body});
   const responseNewTweetContent = await response.json();
   tweetMessages.push(responseNewTweetContent);
   changeHandler();
