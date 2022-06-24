@@ -1,7 +1,6 @@
 import { map, TweetDataObj } from './tweetData'
 
-export async function getTweetAll():Promise<Record<string, TweetDataObj>> {
-  return Promise.resolve(map);
+export async function getTweetAll():Promise<TweetDataObj[]> {
+  return Promise.resolve(Object.values(map))
 }
-
 
