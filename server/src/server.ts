@@ -7,6 +7,10 @@ import { putTweet } from "./infr/putTweet"
 
 let getAccessUrlSplit: string[] = [];
 const server =  createServer(async (req,res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Request-Method', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET')
+  res.setHeader('Access-Control-Allow-Headers', '*')
   if (req.url) {
     getAccessUrlSplit = req.url.split("/");
   }
@@ -17,8 +21,9 @@ const server =  createServer(async (req,res) => {
         newData += chunk;
       })
       .on('end',async function() {
-        const postTweet = await addTweet(String(JSON.parse(newData).user_id),JSON.parse(newData).message);
-        const responseBody = JSON.stringify(postTweet)
+        const postId = await addTweet(String(JSON.parse(newData).user_id),JSON.parse(newData).message);
+        const responseTweet = await getTweet(postId)
+        const responseBody = JSON.stringify(responseTweet)
         res.end(responseBody,'utf-8');
       })
     } else {
