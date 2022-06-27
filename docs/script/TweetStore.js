@@ -6,6 +6,7 @@ export async function loadTweets() {
     method: 'GET',
   })
   tweetMessages = await response.json(); 
+  console.log(tweetMessages)
   changeHandler();
 }
 
@@ -15,7 +16,6 @@ export async function addMessage(content) {
     method : 'POST',
     body : JSON.stringify(newTweetContent)
   })
-
   tweetMessages.push(await response.json());
   changeHandler();
 }
@@ -23,7 +23,9 @@ export async function addMessage(content) {
 export async function deleteTweet() {
   await fetch("http://localhost:4000/message/1",{
     method: "DELETE"
-  }).then(response=>{
+  })
+  tweetMessages.splice(0,1)
+  .then(response=>{
       return response.json()
   }).then(data=> 
   console.log(data)

@@ -40,9 +40,7 @@ const server =  createServer(async (req,res) => {
       const responseBody = JSON.stringify(getTweets)
       res.end(responseBody,'utf-8');
     } else if (req.method === 'DELETE') {
-      const removeTweets = await deleteTweet(tweetId);
-      //const responseBody = JSON.stringify(removeTweets)
-     // console.log(responseBody)
+      await deleteTweet(tweetId);
       res.end(tweetId,'utf-8');
     } else if (req.method === 'PUT') {
       let newData: string = "";
