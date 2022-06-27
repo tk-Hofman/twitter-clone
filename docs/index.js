@@ -1,6 +1,6 @@
 'use strict';
 import { createTweetView } from './script/createTweetView.js'
-import { getTweets, onChange, addMessage, loadTweets, } from './script/TweetStore.js'
+import { getTweets, onChange, addMessage, loadTweets, deleteTweet} from './script/TweetStore.js'
 
 
 function reDrawTweets() {
@@ -31,5 +31,26 @@ function defaultTweet(tweets) {
   document.querySelector('#modal-back').addEventListener('click',() => {
     document.querySelector('#modal').removeAttribute("data-open");
   });
+
+  document.querySelector('#option-content-red').addEventListener('click',() => {
+    document.querySelector('#delete-box-modal').setAttribute("data-open",true);
+    document.querySelector('#menu-box-modal').removeAttribute("data-open");
+  });
+
+  document.querySelector('#modal-back').addEventListener('click',() => {
+    document.querySelector('#menu-box-modal').removeAttribute("data-open");
+  });
+
+  document.querySelector('.cancel-button').addEventListener('click',() => {
+    document.querySelector('#delete-box-modal').removeAttribute("data-open");
+  });
+
+  document.querySelector('.delete-button').addEventListener('click',() => {
+    deleteTweet()
+  });
+  
+
+
+
 
 

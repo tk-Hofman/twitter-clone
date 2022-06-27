@@ -514,6 +514,10 @@ h1 .official-mark{
   height: 15px
 }
 
+.tweet-menu-data:hover {
+  opacity: 0.5;
+}
+
 .tweet-content {
   font-family: Roboto;
   font-style: normal;
@@ -947,4 +951,160 @@ h1 .official-mark{
 
 .new-tweet-send-btn:hover {
   opacity: 0.8;
+}
+
+.tweet-option-box {
+  width: 314px;
+  height: 330px;
+  background-color: #080808;
+  border-radius: 5px;
+  box-shadow: -2px 2px #000000
+}
+
+.tweet-option-box li {
+  color: #FFFFFF;
+  padding-top: 15px;
+}
+
+.tweet-option-box li:hover {
+  opacity: 0.5;
+}
+
+#option-content-red {
+  color: red;
+}
+
+.tweet-option-img {
+  width: 25px;
+  height: 25px;
+  margin-right: 12px;
+}
+
+#option-content-post {
+  color: blue;
+  margin-left: 30%;
+}
+
+.delete-box {
+  width: 288px;
+  height: 269px;
+  background-color: black;
+  border-radius: 5px;
+  margin: 50%;
+  border-radius: 10px;
+}
+
+.delete-box-main-text {
+  color: #FFFFFF;
+  font-family: 'SF Pro';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+  text-align:center;
+  padding-top: 30px;
+}
+
+.delete-box-sab-text {
+  color: #70767C;
+  font-family: 'SF Pro';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 10px;
+  margin-left: 5px;
+  
+}
+
+.delete-box-button {
+  display:flex;
+  flex-flow: column;
+}
+
+.delete-button {
+  background: #F01A1A;
+  Width: 230px;
+  Height: 39px;
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-family: 'SF Pro';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 10px;
+  border: none;
+  margin-left: 30px;
+}
+
+.cancel-button {
+  margin-top: 8px;
+  background: #000000;
+  border: 0.3px solid #F9EEEE;
+  border-radius: 50px;
+  color: #fff;
+  font-family: 'SF Pro';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  Width: 230px;
+  Height: 39px;
+  margin-left: 30px;
+}
+
+.cancel-button:hover {
+  opacity: 0.5;
+}
+
+.delete-button:hover {
+  opacity: 0.5;
+}
+
+.menu-box-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.menu-box-modal[data-open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-box-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.delete-box-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.delete-box-modal[data-open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-box-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4);
 }

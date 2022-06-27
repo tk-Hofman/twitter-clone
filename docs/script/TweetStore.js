@@ -10,13 +10,24 @@ export async function loadTweets() {
 }
 
 export async function addMessage(content) {
-  const newTweetContent = {message: content, like: 0, userId: "tokitoki"};
+  const newTweetContent = {message: content, userId: "tokitoki"};
     const response = await fetch(url, {
     method : 'POST',
     body : JSON.stringify(newTweetContent)
   })
-  tweetMessages.push(await response.json()); 
+
+  tweetMessages.push(await response.json());
   changeHandler();
+}
+
+export async function deleteTweet() {
+  await fetch("http://localhost:4000/message/1",{
+    method: "DELETE"
+  }).then(response=>{
+      return response.json()
+  }).then(data=> 
+  console.log(data)
+  )
 }
 
 export function getTweets() {

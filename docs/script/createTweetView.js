@@ -61,12 +61,12 @@ export function createTweetView (tweetData) {
     share.setAttribute("class","share");
     share.setAttribute("src","img/ue.png");
 
-    const  dateTime = new Date(tweetData.createdAt * 1000);
+
 
     tweetName.textContent = "Tweetr";
     tweetId.textContent = `@${tweetData.userId}・`;
-    tweetTime.textContent = dateTime.toLocaleDateString();
-    replyNumber.textContent = 0 ;
+    tweetTime.textContent = 0;//tweetData.createdAt;
+    replyNumber.textContent = 0;
     rtNumber.textContent = 0 ;
     likeNumber.textContent = tweetData.like;
     tweetContent.textContent = tweetData.message;
@@ -80,6 +80,11 @@ export function createTweetView (tweetData) {
     tweetDetail.appendChild(tweetId);
     tweetDetail.appendChild(tweetTime);
     tweetDetail.appendChild(tweetMenu);
+
+    tweetMenu.addEventListener('click',() => {
+      document.querySelector('#menu-box-modal').setAttribute("data-open",true);
+    })
+
     tweetBoxRight.appendChild(tweetContent);
     tweetBoxRight.appendChild(tweetBottom);
     tweetBottom.appendChild(tweetBottomBlckReply);
