@@ -23,9 +23,10 @@ function defaultTweet(tweets) {
   });
 
   document.querySelector('.new-tweet-send-btn').addEventListener('click',() => {
-    const tweetText =  document.getElementById('tweet-input').value;
+    let tweetText = document.getElementById('tweet-input').value;
     document.querySelector('#modal').removeAttribute("data-open");
     addMessage(tweetText);
+    document.getElementById('tweet-input').value = ""
   });
 
   document.querySelector('#modal-back').addEventListener('click',() => {
@@ -47,6 +48,7 @@ function defaultTweet(tweets) {
 
   document.querySelector('.delete-button').addEventListener('click',() => {
     deleteTweet()
+    document.querySelector('#delete-box-modal').removeAttribute("data-open");
   });
   
 

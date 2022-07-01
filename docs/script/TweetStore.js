@@ -22,7 +22,12 @@ export async function addMessage(content) {
 
 export async function deleteTweet() {
   await fetch("http://localhost:4000/message/1",{
-    method: "DELETE"
+    method: "DELETE",
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: null,
+    crossDomain: true
   })
   tweetMessages.splice(0,1)
   .then(response=>{
@@ -30,6 +35,20 @@ export async function deleteTweet() {
   }).then(data=> 
   console.log(data)
   )
+  
+  // try {
+  //   const response = await fetch("http://localhost:4000/message/1", {
+  //     method: "delete"
+  //   });
+  //   if (!response.ok) {
+  //     const message = 'Error with Status Code: ' + response.status;
+  //     throw new Error(message);
+  //   }
+  //   const data = await response.json();
+  //   console.log(data);
+  // } catch (error) {
+  //   console.log('Error: ' + err);
+  // }
 }
 
 export function getTweets() {
