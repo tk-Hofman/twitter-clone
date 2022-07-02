@@ -84,6 +84,7 @@ export function createTweetView (tweetData) {
     tweetMenu.addEventListener('click',() => {
       document.querySelector('#menu-box-modal').setAttribute("data-open",true);
     })
+  
 
     tweetBoxRight.appendChild(tweetContent);
     tweetBoxRight.appendChild(tweetBottom);

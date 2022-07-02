@@ -168,18 +168,42 @@
 
   <div class="delete-box-modal" id="delete-box-modal">
     <div class="delete-box">
-    <p class="delete-box-main-text">ツイートを削除しますか？</p>
-    <pre class="delete-box-sab-text">
-      この操作は取り消せません。プロフィ
-      ール、あなたをフォローしているアカ
-      ウントのタイムライン、Twitterの検索
-      結果からツイートが削除されます。
-    </pre>
-    <div class="delete-box-button">
-      <button class="delete-button">削除</button>
-      <button class="cancel-button">キャンセル</button>
+      <p class="delete-box-main-text">ツイートを削除しますか？</p>
+      <pre class="delete-box-sab-text">
+        この操作は取り消せません。プロフィ
+        ール、あなたをフォローしているアカ
+        ウントのタイムライン、Twitterの検索
+        結果からツイートが削除されます。
+      </pre>
+      <div class="delete-box-button">
+        <button class="delete-button">削除</button>
+        <button class="cancel-button">キャンセル</button>
+      </div>
     </div>
   </div>
+
+  <div class="put-modal" id="put-modal">
+    <div class="put-modal-back" id="put-modal-back"></div>
+    <div class="new-tweet-box">
+      <div class="new-tweet-box-main">
+        <img class="tweet-profile-img" src="img/twpr.png"> 
+        <textarea id="put-tweet-input" class="what-are-you-doing-now" placeholder="いまどうしてる？"></textarea>
+      </div>
+
+      <div class="reply-guidancd">
+        <img  class="new-tweet-box-img" src="img/tweet-a-s.png"><div class="reply-guidancd-text">全員が返信できます</div>
+      </div>
+
+      <div class="new-tweet-box-bottom">
+        <img class="new-tweet-img" src="img/tweet-img.png">
+        <img class="new-tweet-img" src="img/tweet-gif.png">
+        <img class="new-tweet-img" src="img/tweet-graph.png">
+        <img class="new-tweet-img" src="img/tweet-smair.png">
+        <img class="new-tweet-img" src="img/tweet-taim.png">
+        <img class="new-tweet-img" src="img/tweet-map.png">
+        <button class="put-tweet-send-btn" value="Check">更新する</button>
+      </div>
+    </div>
   </div>
 
   <script src="index.js" type="module"></script>

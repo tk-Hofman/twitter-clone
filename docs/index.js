@@ -1,6 +1,6 @@
 'use strict';
 import { createTweetView } from './script/createTweetView.js'
-import { getTweets, onChange, addMessage, loadTweets, deleteTweet} from './script/TweetStore.js'
+import { getTweets, onChange, addMessage, loadTweets, deleteTweet, updateTweet} from './script/TweetStore.js'
 
 
 function reDrawTweets() {
@@ -23,7 +23,7 @@ function defaultTweet(tweets) {
   });
 
   document.querySelector('.new-tweet-send-btn').addEventListener('click',() => {
-    let tweetText = document.getElementById('tweet-input').value;
+    const tweetText = document.getElementById('tweet-input').value;
     document.querySelector('#modal').removeAttribute("data-open");
     addMessage(tweetText);
     document.getElementById('tweet-input').value = ""
@@ -31,6 +31,7 @@ function defaultTweet(tweets) {
 
   document.querySelector('#modal-back').addEventListener('click',() => {
     document.querySelector('#modal').removeAttribute("data-open");
+    document.getElementById('tweet-input').value = ""
   });
 
   document.querySelector('#option-content-red').addEventListener('click',() => {
@@ -50,6 +51,24 @@ function defaultTweet(tweets) {
     deleteTweet()
     document.querySelector('#delete-box-modal').removeAttribute("data-open");
   });
+
+  document.querySelector('#option-content-post').addEventListener('click',() => {
+    document.querySelector('#put-modal').setAttribute("data-open",true);
+    document.querySelector('#menu-box-modal').removeAttribute("data-open");
+  });
+
+  document.querySelector('.put-tweet-send-btn').addEventListener('click',() => {
+    const tweetText = document.getElementById('put-tweet-input').value;
+    document.querySelector('#put-modal').removeAttribute("data-open");
+    updateTweet(tweetText);
+    document.getElementById('put-tweet-input').value = ""
+  });
+
+  document.querySelector('#put-modal-back').addEventListener('click',() => {
+    document.querySelector('#put-modal').removeAttribute("data-open");
+    document.getElementById('put-tweet-input').value = ""
+  });
+
   
 
 

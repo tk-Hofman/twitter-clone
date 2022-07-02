@@ -1108,3 +1108,42 @@ h1 .official-mark{
   bottom: 0;
   background-color: rgba(0,0,0,0.4);
 }
+
+.put-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.put-modal[data-open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.put-tweet-send-btn {
+  border: none;
+  width: 131px;
+  height: 37px;
+  background-color: #0096F8;
+  border-radius: 17px;
+  color: #fff;
+  margin-left: 150px;
+  margin-top: -10px;
+}
+
+.put-tweet-send-btn:hover {
+  opacity: 0.8;
+}
+
+.put-modal-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+}
