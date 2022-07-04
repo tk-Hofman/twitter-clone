@@ -8,6 +8,7 @@ export async function addTweet (userId: string, message: string): Promise<string
   for ( let i = 0; i < 10; i++ ) {
     id += idElement.charAt(Math.floor(Math.random() * idElement.length));
   }
+
   for( let i = 0; i < Object.keys(map).length; i++) {
     if (Object.keys(map)[i] !== id) {
       const resultMap = map[id] = {

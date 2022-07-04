@@ -44,6 +44,9 @@ export function createTweetView (tweetData) {
     tweetId.setAttribute("class","tweet-id");
     tweetTime.setAttribute("class","tweet-time");
     tweetMenu.setAttribute("class","tweet-menu-data");
+    const id = Math.floor( Math.random() * 100 )
+    tweetMenu.setAttribute("id",String(id))
+
     tweetMenu.setAttribute("src","img/ten.png");
     tweetContent.setAttribute("class","tweet-content");
     tweetBottomBlckReply.setAttribute("class","tweet-bottom-blck");
@@ -61,11 +64,9 @@ export function createTweetView (tweetData) {
     share.setAttribute("class","share");
     share.setAttribute("src","img/ue.png");
 
-
-
     tweetName.textContent = "Tweetr";
     tweetId.textContent = `@${tweetData.userId}・`;
-    tweetTime.textContent = 0;//tweetData.createdAt;
+    tweetTime.textContent = tweetData.createdAt.slice(5);
     replyNumber.textContent = 0;
     rtNumber.textContent = 0 ;
     likeNumber.textContent = tweetData.like;
@@ -85,7 +86,6 @@ export function createTweetView (tweetData) {
       document.querySelector('#menu-box-modal').setAttribute("data-open",true);
     })
   
-
     tweetBoxRight.appendChild(tweetContent);
     tweetBoxRight.appendChild(tweetBottom);
     tweetBottom.appendChild(tweetBottomBlckReply);

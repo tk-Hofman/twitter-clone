@@ -1,6 +1,6 @@
 'use strict';
 import { createTweetView } from './script/createTweetView.js'
-import { getTweets, onChange, addMessage, loadTweets, deleteTweet, updateTweet} from './script/TweetStore.js'
+import { getTweets, onChange, addMessage, loadTweets, deleteTweet, updateTweet, tweetMessages} from './script/TweetStore.js'
 
 
 function reDrawTweets() {
@@ -17,6 +17,12 @@ function defaultTweet(tweets) {
     createTweetView(tweets[i]);
   }
 }
+
+  let id;
+  document.body.addEventListener('click', function (event) {
+    if(event.target.className === "tweet-menu-data")
+    id = event.target.id
+  }, false)
 
   document.querySelector('#tweet-btn').addEventListener('click',() => {
     document.querySelector('#modal').setAttribute("data-open",true);
@@ -48,7 +54,7 @@ function defaultTweet(tweets) {
   });
 
   document.querySelector('.delete-button').addEventListener('click',() => {
-    deleteTweet()
+    deleteTweet(id);   
     document.querySelector('#delete-box-modal').removeAttribute("data-open");
   });
 
@@ -60,14 +66,17 @@ function defaultTweet(tweets) {
   document.querySelector('.put-tweet-send-btn').addEventListener('click',() => {
     const tweetText = document.getElementById('put-tweet-input').value;
     document.querySelector('#put-modal').removeAttribute("data-open");
-    updateTweet(tweetText);
+    updateTweet(tweetText,id);
     document.getElementById('put-tweet-input').value = ""
   });
+
 
   document.querySelector('#put-modal-back').addEventListener('click',() => {
     document.querySelector('#put-modal').removeAttribute("data-open");
     document.getElementById('put-tweet-input').value = ""
   });
+
+  
 
   
 

@@ -1,4 +1,4 @@
-let tweetMessages = [];
+export let tweetMessages = [];
 const url = "http://localhost:4000/message"
 
 export async function loadTweets() {
@@ -10,7 +10,7 @@ export async function loadTweets() {
 }
 
 export async function addMessage(content) {
-  const newTweetContent = {message: content, userId: "tokitoki"};
+  const newTweetContent = {message: content, userId: 'tokitoki'};
     const response = await fetch(url, {
     method : 'POST',
     body : JSON.stringify(newTweetContent)
@@ -19,16 +19,16 @@ export async function addMessage(content) {
   changeHandler();
 }
 
-export async function deleteTweet() {
-  await fetch("http://localhost:4000/message/1",{
+export async function deleteTweet(id) {
+  await fetch(`${url}/${id}`,{
     method: "DELETE",
   })
   changeHandler();
 }
 
-export async function updateTweet(message) {
+export async function updateTweet(message,id) {
   const newTweetContent = {message: message, userId: "tokitoki"};
-  const response = await fetch("http://localhost:4000/message/1",{
+  const response = await fetch(`${url}/${id}`,{
     method: "PUT",
     body : JSON.stringify(newTweetContent)
   })

@@ -23,7 +23,7 @@ const server =  createServer(async (req,res) => {
         newData += chunk;
       })
       .on('end',async function() {
-        const postId = await addTweet(String(JSON.parse(newData).user_id),JSON.parse(newData).message);
+        const postId = await addTweet(String(JSON.parse(newData).userId),JSON.parse(newData).message);
         const responseTweet = await getTweet(postId)
         const responseBody = JSON.stringify(responseTweet)
         res.end(responseBody,'utf-8');
@@ -44,7 +44,7 @@ const server =  createServer(async (req,res) => {
     } else if (req.method === 'DELETE') {
       await deleteTweet(tweetId);
       res.end(tweetId,'utf-8');
-    } else if (req.method === 'PUT') {
+    } else if (req.method === 'PUT') {  
       let newData: string = "";
       req.on('data', function(chunk) {
         newData += chunk;
