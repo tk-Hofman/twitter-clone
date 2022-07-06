@@ -44,8 +44,6 @@ export function createTweetView (tweetData) {
     tweetId.setAttribute("class","tweet-id");
     tweetTime.setAttribute("class","tweet-time");
     tweetMenu.setAttribute("class","tweet-menu-data");
-    const id = Math.floor( Math.random() * 100 )
-    tweetMenu.setAttribute("id",String(id))
 
     tweetMenu.setAttribute("src","img/ten.png");
     tweetContent.setAttribute("class","tweet-content");

@@ -54,7 +54,7 @@ function defaultTweet(tweets) {
   });
 
   document.querySelector('.delete-button').addEventListener('click',() => {
-    deleteTweet(id);   
+    deleteTweet();   
     document.querySelector('#delete-box-modal').removeAttribute("data-open");
   });
 
@@ -66,7 +66,7 @@ function defaultTweet(tweets) {
   document.querySelector('.put-tweet-send-btn').addEventListener('click',() => {
     const tweetText = document.getElementById('put-tweet-input').value;
     document.querySelector('#put-modal').removeAttribute("data-open");
-    updateTweet(tweetText,id);
+    updateTweet(tweetText);
     document.getElementById('put-tweet-input').value = ""
   });
 

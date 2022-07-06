@@ -7,7 +7,7 @@ type TweetDataObj = {
 }
 
 
-const date = new Date
+const date = new Date();
 
 const map: Record<string,TweetDataObj> = {
   1: {

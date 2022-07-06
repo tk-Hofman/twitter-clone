@@ -19,23 +19,27 @@ export async function addMessage(content) {
   changeHandler();
 }
 
-export async function deleteTweet(id) {
-  await fetch(`${url}/${id}`,{
+export async function deleteTweet() {
+  const response = await fetch(`${url}/${deleteTweetId}`,{
     method: "DELETE",
   })
+  const deleteTweetId = await response.json()
+  const newTweetData = tweetMessages.filter((data) => data.id !== String(deleteTweetId));
+  tweetMessages = newTweetData;
   changeHandler();
 }
 
-export async function updateTweet(message,id) {
+export async function updateTweet(message) {
   const newTweetContent = {message: message, userId: "tokitoki"};
-  const response = await fetch(`${url}/${id}`,{
+  const response = await fetch(`${url}/${putTweetId}`,{
     method: "PUT",
     body : JSON.stringify(newTweetContent)
   })
-  tweetMessages[0] = await response.json();
+  const putTweetData = await response.json()
+  const putTweetId = putTweetData.id;
+  tweetMessages[putTweetId] = putTweetData;
   changeHandler();
 }
-
 
 export function getTweets() {
   return tweetMessages;
