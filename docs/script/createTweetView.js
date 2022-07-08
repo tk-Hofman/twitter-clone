@@ -2,37 +2,37 @@ import { addLike } from "./TweetStore.js";
 
 
 export function createTweetView (tweetData) {
-    var tweetBoxNew = document.createElement('div');
-    var tweetDetail = document.createElement('div');
-    var tweetBottom = document.createElement('div');
+    let tweetBoxNew = document.createElement('div');
+    let tweetDetail = document.createElement('div');
+    let tweetBottom = document.createElement('div');
     tweetBoxNew.setAttribute("class","tweet-box");
     tweetDetail.setAttribute("class","tweet-detail");
     tweetBottom.setAttribute("class","tweet-bottom");
   
-    var tweetBoxLeft = document.createElement('div');
-    var accountIcon = document.createElement ('div')
-    var tweetBoxRight = document.createElement('div');
-    var tweetName = document.createElement('h3');
-    var checkImg = document.createElement('img');
-    var tweetId = document.createElement('div');
-    var tweetTime = document.createElement('div')
-    var tweetMenu = document.createElement('img');
-    var tweetContent = document.createElement('div');
-    var tweetBottomBlckReply = document.createElement('div');
-    var tweetBottomBlockRt = document.createElement('div');
-    var tweetBottomBlockLike = document.createElement('div');
+    let tweetBoxLeft = document.createElement('div');
+    let accountIcon = document.createElement ('div')
+    let tweetBoxRight = document.createElement('div');
+    let tweetName = document.createElement('h3');
+    let checkImg = document.createElement('img');
+    let tweetId = document.createElement('div');
+    let tweetTime = document.createElement('div')
+    let tweetMenu = document.createElement('img');
+    let tweetContent = document.createElement('div');
+    let tweetBottomBlckReply = document.createElement('div');
+    let tweetBottomBlockRt = document.createElement('div');
+    let tweetBottomBlockLike = document.createElement('div');
 
     tweetBottomBlockLike.addEventListener('click',() => {
       addLike(tweetData.id);
     })
 
-    var reply = document.createElement('img');
-    var replyNumber = document.createElement('div');
-    var rt = document.createElement('img');
-    var rtNumber = document.createElement('div');
-    var likeIcon = document.createElement('button');
-    var likeNumber = document.createElement('div');
-    var share = document.createElement('img');
+    let reply = document.createElement('img');
+    let replyNumber = document.createElement('div');
+    let rt = document.createElement('img');
+    let rtNumber = document.createElement('div');
+    let likeIcon = document.createElement('button');
+    let likeNumber = document.createElement('div');
+    let share = document.createElement('img');
 
 
     tweetBoxLeft.setAttribute("class","tweet-box-left");
@@ -96,6 +96,6 @@ export function createTweetView (tweetData) {
     tweetBottomBlockLike.appendChild(likeIcon);
     tweetBottomBlockLike.appendChild(likeNumber);
     tweetBottom.appendChild(share);
-    var tweets = document.querySelector('#tweets');
+    let tweets = document.querySelector('#tweets');
     tweets.prepend(tweetBoxNew);
 }

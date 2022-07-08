@@ -13,17 +13,17 @@ describe('getTweetAll', () => {
     const getAll = await getTweetAll()
     expect(getAll[0].id).toEqual("1")
     expect(getAll[0].message).toEqual("hello")
-    expect(getAll[0].userId).toEqual("tokitoki")
+    expect(getAll[0].userId).toEqual("Twitter")
     const resultStringDate1: any = getAll[0]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate1) <= numberChange(date))
     expect(getAll[1].id).toEqual("2")
     expect(getAll[1].message).toEqual("world")
-    expect(getAll[1].userId).toEqual("tokitoki")
+    expect(getAll[1].userId).toEqual("Twitter")
     const resultStringDate2: any = getAll[1]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate2) <= numberChange(date))
     expect(getAll[2].id).toEqual("3")
     expect(getAll[2].message).toEqual("japan")
-    expect(getAll[2].userId).toEqual("tokitoki")
+    expect(getAll[2].userId).toEqual("Twitter")
     const resultStringDate3: any = getAll[2]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate3) <= numberChange(date))
   })
@@ -33,17 +33,17 @@ describe('getTweetAll', () => {
     const getAll = await getTweetAll()
     expect(getAll[0].id).toEqual("1")
     expect(getAll[0].message).toEqual("hello")
-    expect(getAll[0].userId).toEqual("tokitoki")
+    expect(getAll[0].userId).toEqual("Twitter")
     const resultStringDate1: any = getAll[0]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate1) <= numberChange(date))
     expect(getAll[1].id).toEqual("2")
     expect(getAll[1].message).toEqual("world")
-    expect(getAll[1].userId).toEqual("tokitoki")
+    expect(getAll[1].userId).toEqual("Twitter")
     const resultStringDate2: any = getAll[1]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate2) <= numberChange(date))
     expect(getAll[2].id).toEqual("3")
     expect(getAll[2].message).toEqual("japan")
-    expect(getAll[2].userId).toEqual("tokitoki")
+    expect(getAll[2].userId).toEqual("Twitter")
     const resultStringDate3: any = getAll[2]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate3) <= numberChange(date))
     expect(getAll[3].id).toEqual(responseId)
@@ -58,17 +58,17 @@ describe('getTweetAll', () => {
     const getAll = await getTweetAll()
     expect(getAll[0].id).toEqual("1")
     expect(getAll[0].message).toEqual("hello")
-    expect(getAll[0].userId).toEqual("tokitoki")
+    expect(getAll[0].userId).toEqual("Twitter")
     const resultStringDate1: any = getAll[0]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate1) <= numberChange(date))
     expect(getAll[1].id).toEqual("2")
     expect(getAll[1].message).toEqual("world")
-    expect(getAll[1].userId).toEqual("tokitoki")
+    expect(getAll[1].userId).toEqual("Twitter")
     const resultStringDate2: any = getAll[1]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate2) <= numberChange(date))
     expect(getAll[2].id).toEqual("3")
     expect(getAll[2].message).toEqual("こんにちは")
-    expect(getAll[2].userId).toEqual("tokitoki")
+    expect(getAll[2].userId).toEqual("Twitter")
     const resultStringDate3: any = getAll[2]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate3) <= numberChange(date))
 
@@ -79,12 +79,12 @@ describe('getTweetAll', () => {
     const getAll = await getTweetAll()
     expect(getAll[0].id).toEqual("2")
     expect(getAll[0].message).toEqual("world")
-    expect(getAll[0].userId).toEqual("tokitoki")
+    expect(getAll[0].userId).toEqual("Twitter")
     const resultStringDate2: any = getAll[1]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate2) <= numberChange(date))
     expect(getAll[1].id).toEqual("3")
     expect(getAll[1].message).toEqual("こんにちは")
-    expect(getAll[1].userId).toEqual("tokitoki")
+    expect(getAll[1].userId).toEqual("Twitter")
     const resultStringDate3: any = getAll[2]?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate3) <= numberChange(date))
 

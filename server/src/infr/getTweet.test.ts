@@ -12,7 +12,7 @@ describe("getTweet", () => {
     const resultData = await getTweet(tweetId) 
     expect(resultData?.id).toEqual("1")
     expect(resultData?.message).toEqual("hello")
-    expect(resultData?.userId).toEqual("tokitoki")
+    expect(resultData?.userId).toEqual("Twitter")
     const resultStringDate: any = resultData?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate) <= numberChange(date))
 
@@ -23,7 +23,7 @@ describe("getTweet", () => {
     const resultData = await getTweet(tweetId) 
     expect(resultData?.id).toEqual("2")
     expect(resultData?.message).toEqual("world")
-    expect(resultData?.userId).toEqual("tokitoki")
+    expect(resultData?.userId).toEqual("Twitter")
     const resultStringDate: any = resultData?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate) <= numberChange(date))
 
@@ -33,7 +33,7 @@ describe("getTweet", () => {
     const resultData = await getTweet(tweetId) 
     expect(resultData?.id).toEqual("3")
     expect(resultData?.message).toEqual("japan")
-    expect(resultData?.userId).toEqual("tokitoki")
+    expect(resultData?.userId).toEqual("Twitter")
     const resultStringDate: any = resultData?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate) <= numberChange(date))
 

@@ -10,7 +10,7 @@ describe('putTweet', () => {
     const result = await getTweet("3")
     expect(result?.id).toEqual("3")
     expect(result?.message).toEqual("更新")
-    expect(result?.userId).toEqual("tokitoki")
+    expect(result?.userId).toEqual("Twitter")
     const resultStringDate: any = result?.createdAt;
     expect(true).toEqual(numberChange(resultStringDate) <= numberChange(date))
   })

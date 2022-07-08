@@ -1,3 +1,14 @@
+// type TweetDataObj = {
+//   id: string;
+//   message: string;
+//   like: number;
+//   createdAt: string;
+//   userId: string;
+// }
+
+// export let tweetMessages:TweetDataObj[] = [];
+// const url:string = "http://localhost:4000/message"
+
 export let tweetMessages = [];
 const url = "http://localhost:4000/message"
 
@@ -10,7 +21,7 @@ export async function loadTweets() {
 }
 
 export async function addMessage(content) {
-  const newTweetContent = {message: content, userId: 'tokitoki'};
+  const newTweetContent = {message: content, userId: 'Twitter'};
     const response = await fetch(url, {
     method : 'POST',
     body : JSON.stringify(newTweetContent)
@@ -30,7 +41,7 @@ export async function deleteTweet() {
 }
 
 export async function updateTweet(message) {
-  const newTweetContent = {message: message, userId: "tokitoki"};
+  const newTweetContent = {message: message, userId: "Twitter"};
   const response = await fetch(`${url}/${putTweetId}`,{
     method: "PUT",
     body : JSON.stringify(newTweetContent)
