@@ -31,9 +31,8 @@ export async function deleteTweet(id:string) {
   const response = await fetch(`${url}/${id}`,{
     method: "DELETE",
   })
-  const deleteTweetId = await response.json()
-  const newTweetData = tweetMessages.filter((data) => data.id !== String(deleteTweetId));
-  tweetMessages = newTweetData;
+  const deleteTweetId = await response.json();
+  tweetMessages = tweetMessages.filter((data) => data.id !== String(deleteTweetId));
   changeHandler();
 }
 
@@ -45,9 +44,14 @@ export async function updateTweet(message:string, id:string) {
   })
   const putTweetData = await response.json()
   const putTweetId = putTweetData.id;
-  tweetMessages[putTweetId] = putTweetData;
+  tweetMessages = tweetMessages.map(data => {
+    if(data.id === putTweetId) {
+      data.message = putTweetData.message;
+    };
+    return data;
+  });
   changeHandler();
-}
+};
 
 export function getTweets() {
   return tweetMessages;

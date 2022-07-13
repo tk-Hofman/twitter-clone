@@ -35,8 +35,7 @@ export function deleteTweet(id) {
             method: "DELETE",
         });
         const deleteTweetId = yield response.json();
-        const newTweetData = tweetMessages.filter((data) => data.id !== String(deleteTweetId));
-        tweetMessages = newTweetData;
+        tweetMessages = tweetMessages.filter((data) => data.id !== String(deleteTweetId));
         changeHandler();
     });
 }
@@ -49,11 +48,17 @@ export function updateTweet(message, id) {
         });
         const putTweetData = yield response.json();
         const putTweetId = putTweetData.id;
-        console.log(putTweetId)
-        tweetMessages[putTweetId] = putTweetData;
+        tweetMessages = tweetMessages.map(data => {
+            if (data.id === putTweetId) {
+                data.message = putTweetData.message;
+            }
+            ;
+            return data;
+        });
         changeHandler();
     });
 }
+;
 export function getTweets() {
     return tweetMessages;
 }
