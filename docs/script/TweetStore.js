@@ -31,11 +31,16 @@ export function addMessage(content) {
 }
 export function deleteTweet(id) {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log("1");
         const response = yield fetch(`${url}/${id}`, {
             method: "DELETE",
         });
-        const deleteTweetId = yield response.json();
-        tweetMessages = tweetMessages.filter((data) => data.id !== String(deleteTweetId));
+        console.log("2");
+        const deleteData = yield response.json();
+        const deleteDataId = deleteData.id;
+        console.log("3");
+        tweetMessages = tweetMessages.filter((data) => data.id !== String(deleteDataId));
+        console.log("4");
         changeHandler();
     });
 }
