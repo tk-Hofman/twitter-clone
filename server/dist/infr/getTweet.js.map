@@ -1,0 +1,1 @@
+{"version":3,"file":"getTweet.js","sourceRoot":"","sources":["../../src/infr/getTweet.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,2CAA+C;AAE/C,SAAsB,QAAQ,CAAC,OAAe;;QAC5C,IAAG,eAAG,CAAC,OAAO,CAAC,EAAE;YACf,OAAO,OAAO,CAAC,OAAO,CAAC,eAAG,CAAC,OAAO,CAAC,CAAC,CAAA;SACrC;QACD,OAAO,OAAO,CAAC,OAAO,CAAC,IAAI,CAAC,CAAA;IAC9B,CAAC;CAAA;AALD,4BAKC"}

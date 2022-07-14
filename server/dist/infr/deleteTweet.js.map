@@ -1,0 +1,1 @@
+{"version":3,"file":"deleteTweet.js","sourceRoot":"","sources":["../../src/infr/deleteTweet.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,2CAAiC;AAEjC,SAAsB,WAAW,CAAC,EAAU;;QAC1C,IAAG,eAAG,CAAC,EAAE,CAAC,EAAE;YACV,OAAO,eAAG,CAAC,EAAE,CAAC,CAAA;SACf;aAAM;YACL,MAAM,IAAI,KAAK,CAAC,gBAAgB,CAAC,CAAC;SACnC;IACH,CAAC;CAAA;AAND,kCAMC"}

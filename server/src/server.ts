@@ -8,9 +8,11 @@ import { putTweet } from "./infr/putTweet"
 let getAccessUrlSplit: string[] = [];
 const server =  createServer(async (req,res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Request-Method', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET')
-  res.setHeader('Access-Control-Allow-Headers', '*')
+  if(req.method === "OPTIONS") {
+    res.setHeader('Access-Control-Allow-Methods','PUT,DELETE');
+    res.end();
+    return;
+  }
   if (req.url) {
     getAccessUrlSplit = req.url.split("/");
   }
@@ -21,12 +23,12 @@ const server =  createServer(async (req,res) => {
         newData += chunk;
       })
       .on('end',async function() {
-        const postId = await addTweet(String(JSON.parse(newData).user_id),JSON.parse(newData).message);
+        const postId = await addTweet(String(JSON.parse(newData).userId),JSON.parse(newData).message);
         const responseTweet = await getTweet(postId)
         const responseBody = JSON.stringify(responseTweet)
         res.end(responseBody,'utf-8');
       })
-    } else {
+    } else { 
       if (req.method === 'GET') {
         const getTweets = await getTweetAll();
         const responseBody = JSON.stringify(getTweets)
@@ -40,10 +42,10 @@ const server =  createServer(async (req,res) => {
       const responseBody = JSON.stringify(getTweets)
       res.end(responseBody,'utf-8');
     } else if (req.method === 'DELETE') {
-      const removeTweets = await deleteTweet(tweetId);
-      const responseBody = JSON.stringify(removeTweets)
+     const deleteData = await deleteTweet(tweetId);
+     const responseBody = JSON.stringify(deleteData)
       res.end(responseBody,'utf-8');
-    } else if (req.method === 'PUT') {
+    } else if (req.method === 'PUT') {  
       let newData: string = "";
       req.on('data', function(chunk) {
         newData += chunk;
@@ -54,7 +56,7 @@ const server =  createServer(async (req,res) => {
         res.end(responseBody,'utf-8');
       })
     }
-  }
+  }   
 });
 
   module.exports = server;

@@ -1,0 +1,7 @@
+import { resolve } from "path";
+
+export function sleep (ms: number):Promise<void> {
+  return new Promise(resolve => {
+    setTimeout(resolve,ms)
+  })
+}

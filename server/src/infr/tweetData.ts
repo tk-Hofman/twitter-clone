@@ -7,7 +7,7 @@ type TweetDataObj = {
 }
 
 
-const date = new Date
+const date = new Date();
 
 const map: Record<string,TweetDataObj> = {
   1: {
@@ -15,21 +15,21 @@ const map: Record<string,TweetDataObj> = {
     message: "hello",
     like: 0,
     createdAt: date.toLocaleString(),
-    userId: "tokitoki"
+    userId: "Twitter"
   },
   2: {
     id: "2",
     message: "world",
     like: 0,
     createdAt: date.toLocaleString(),
-    userId: "tokitoki"
+    userId: "Twitter"
   },
   3: {
     id: "3",
     message: "japan",
     like: 0,
     createdAt: date.toLocaleString(),
-    userId: "tokitoki"
+    userId: "Twitter"
   }
 }
 

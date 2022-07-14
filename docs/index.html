@@ -152,15 +152,58 @@
     </div>
   </div>
 
-  <div class="tweet-option-box">
-   <ul>
-    <li>削除</li>
-    <li>プロフィールに固定する</li>
-    <li>@Twitterさんをリストに追加/削除</li>
-    <li>返信できるユーザーを変更</li>
-    <li>ツイートを埋め込む</li>
-    <li>ツイートアナリティクスを表示</li>
-   </ul>
+  <div class="menu-box-modal" id="menu-box-modal">
+    <div class="tweet-option-box">
+      <ul>
+       <li id= "option-content-red" class="option-content"><img class="tweet-option-img" src="img/option-delete.png">削除</li>
+       <li class="option-content"><img class="tweet-option-img" src="img/option-needle.png">プロフィールに固定する</li>
+       <li class="option-content"><img class="tweet-option-img" src="img/option-plsu.png">@Twitterさんをリストに追加/削除</li>
+       <li class="option-content"><img class="tweet-option-img" src="img/option-coment.png">返信できるユーザーを変更</li>
+       <li class="option-content"><img class="tweet-option-img" src="img/option-arrow.png">ツイートを埋め込む</li>
+       <li class="option-content"><img class="tweet-option-img" src="img/option-an.png">ツイートアナリティクスを表示</li>
+       <li id="option-content-post"class="option-content">ツイートを更新</li>
+      </ul>
+     </div>
+  </div>
+
+  <div class="delete-box-modal" id="delete-box-modal">
+    <div class="delete-box">
+      <p class="delete-box-main-text">ツイートを削除しますか？</p>
+      <pre class="delete-box-sab-text">
+        この操作は取り消せません。プロフィ
+        ール、あなたをフォローしているアカ
+        ウントのタイムライン、Twitterの検索
+        結果からツイートが削除されます。
+      </pre>
+      <div class="delete-box-button">
+        <button class="delete-button">削除</button>
+        <button class="cancel-button">キャンセル</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="put-modal" id="put-modal">
+    <div class="put-modal-back" id="put-modal-back"></div>
+    <div class="new-tweet-box">
+      <div class="new-tweet-box-main">
+        <img class="tweet-profile-img" src="img/twpr.png"> 
+        <textarea id="put-tweet-input" class="what-are-you-doing-now" placeholder="いまどうしてる？"></textarea>
+      </div>
+
+      <div class="reply-guidancd">
+        <img  class="new-tweet-box-img" src="img/tweet-a-s.png"><div class="reply-guidancd-text">全員が返信できます</div>
+      </div>
+
+      <div class="new-tweet-box-bottom">
+        <img class="new-tweet-img" src="img/tweet-img.png">
+        <img class="new-tweet-img" src="img/tweet-gif.png">
+        <img class="new-tweet-img" src="img/tweet-graph.png">
+        <img class="new-tweet-img" src="img/tweet-smair.png">
+        <img class="new-tweet-img" src="img/tweet-taim.png">
+        <img class="new-tweet-img" src="img/tweet-map.png">
+        <button class="put-tweet-send-btn" value="Check">更新する</button>
+      </div>
+    </div>
   </div>
 
   <script src="index.js" type="module"></script>
